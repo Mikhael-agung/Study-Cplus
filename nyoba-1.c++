@@ -13,6 +13,7 @@ void printTriangle() {
         z += '\n';
     }
     std::cout << z << endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void printChessboard() {
@@ -42,6 +43,7 @@ void printChessboard() {
     }
 
     std::cout << s << endl; 
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void printDiamond() {
@@ -70,6 +72,15 @@ void printDiamond() {
 }
 
 int main() {
+
+    float A, T, L;
+    cout << "Masukan Alas Segitiga: ";
+    cin >> A;
+    cout << "Masukan Tinggi Segitiga: ";
+    cin >> T;
+    L = 0.5 * A * T;
+    cout << "Luas Segitiga Adalah: ";
+    cout << L << endl << endl << endl;
     thread t1(printTriangle);
     thread t2(printChessboard);
     thread t3(printDiamond);
