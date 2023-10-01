@@ -1,42 +1,26 @@
 #include <iostream>
 #include <string>
-
+#include <thread>
 
 using namespace std;
-int main () {
-//     cout << "hello" << endl;
-//     cout << "my name" << endl << endl << endl;
-//     cout << "Buzzard" ;
 
-// } // namespace std;
-
-// segitiga SIKU
-// using namespace std;
-// int main()
-// {
+void printTriangle() {
     std::string z = "";
-    for (int i = 0; i < 10; i++)
-    {
-        for (int x = 0; x <= i; x++)
-        {
+    for (int i = 0; i < 10; i++) {
+        for (int x = 0; x <= i; x++) {
             z += '*';
         }
         z += '\n';
     }
-    std::cout << z;
-    return 0;
+    std::cout << z << endl;
+}
 
+void printChessboard() {
+    std::string s = "";
+    int panjang = 10;
+    int lebar = 5;
 
-//  papan catur
-
-// using namespace std;
-// int main() {
-
-std:: string s = "";
-     int panjang = 10;
-     int lebar = 5;
-
-     for(int i = 1; i <= lebar; i++ ){
+    for(int i = 1; i <= lebar; i++ ){
         if(i % 2 == 0){
             for( int x = 1; x <= panjang; x++){
                 if( x % 2 == 0){
@@ -55,18 +39,14 @@ std:: string s = "";
             }
         }
         s += '\n';
-     }
+    }
 
-    std:: cout << s; 
-    return 0;
+    std::cout << s << endl; 
+}
 
-
-
-// belah kektupat separuh sebelah kiri!!
-
-// int main() {
-    std:: string d = "";
-        int t = 10;
+void printDiamond() {
+    std::string d = "";
+    int t = 10;
 
     for(int a = 0; a < t; a++) {
         for(int s = 0; s <= a; s++) {
@@ -86,7 +66,17 @@ std:: string s = "";
         d += '\n';
     }
 
-    std:: cout << d;
-    return 0;
+    std::cout << d << endl;
 }
 
+int main() {
+    thread t1(printTriangle);
+    thread t2(printChessboard);
+    thread t3(printDiamond);
+
+    t1.join();
+    t2.join();
+    t3.join();
+
+    return 0;
+}
