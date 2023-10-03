@@ -81,6 +81,7 @@ int main() {
     L = 0.5 * A * T;
     cout << "Luas Segitiga Adalah: ";
     cout << L << endl << endl << endl;
+    
     thread t1(printTriangle);
     thread t2(printChessboard);
     thread t3(printDiamond);
