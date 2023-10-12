@@ -126,7 +126,7 @@ void printPiramid()
 {
     // ! piramida FOR
     int tinggi;
-    std::cout << "masukan nilai tinggi segitiga : ";
+    std::cout << "masukan nilai tinggi segitiga : " << endl;
     std::cin >> tinggi;
 
     for (int i = 1; i <= tinggi; i++){
