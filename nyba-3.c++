@@ -36,6 +36,12 @@ void switchCase() {
     }
 }
 
+
+
+void studyIfCase () {
+    
+}
+
 int main() {
     switchCase();
     return 0;
