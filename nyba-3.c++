@@ -2,11 +2,14 @@
 using namespace std;
 
 void switchCase() {
-    cout << "Pilih Rumus Luas Bangun : " << endl;
-    cout << "1. Luas Lingkaran" << endl;
-    cout << "2. Luas Persegi" << endl;
-    cout << "3. Luas Trapesium " << endl;
 
+
+    cout << "--------------------------------" << endl;
+    cout << "|  Pilih Rumus Luas Bangun :   |" << endl;
+    cout << "| 1. Luas Lingkaran            |" << endl;
+    cout << "| 2. Luas Persegi              |" << endl;
+    cout << "| 3. Luas Trapesium            |" << endl;
+    cout << "--------------------------------" << endl;
 
     int pilih;
     cout << "Pilihan :" << endl;
