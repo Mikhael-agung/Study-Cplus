@@ -8,6 +8,7 @@ int main()
     int pilihan;
     int pilihanUser;
     int totalHarga = 0;
+    int jumlahPorsi;
 
     while (true)
     {
@@ -37,10 +38,14 @@ int main()
             switch (pilihanUser)
             {
             case 1:
-                totalHarga += 10;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi;
+                totalHarga += 10 * jumlahPorsi;
                 break;
             case 2:
-                totalHarga += 20;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi;
+                totalHarga += 20 * jumlahPorsi;
                 break;
             default:
                 cout << "Pilihan porsi tidak valid." << endl;
@@ -61,10 +66,14 @@ int main()
             switch (pilihanUser)
             {
             case 1:
-                totalHarga += 15;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi; 
+                totalHarga += 15 * jumlahPorsi;
                 break;
             case 2:
-                totalHarga += 20;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi; 
+                totalHarga += 20 * jumlahPorsi;
                 break;
             default:
                 cout << "Pilihan porsi tidak valid." << endl;
@@ -85,10 +94,14 @@ int main()
             switch (pilihanUser)
             {
             case 1:
-                totalHarga += 20;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi; 
+                totalHarga += 20 * jumlahPorsi;
                 break;
             case 2:
-                totalHarga += 15;
+                cout << "Berapa banyak porsi yang ingin Anda pesan? ";
+                cin >> jumlahPorsi; 
+                totalHarga += 15 * jumlahPorsi;
                 break;
             default:
                 cout << "Pilihan porsi tidak valid." << endl;
