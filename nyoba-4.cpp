@@ -78,8 +78,8 @@ int main()
             cout << "|  Pilih porsi Gulai:        |" << endl;
             cout << "|  1. Gulai sapi - 20K       |" << endl;
             cout << "|  2. Gulai ayam - 15K       |" << endl;
-            cout << "|  Silakan Pilih porsi :     |" << endl;
             cout << "|============================|" << endl;
+            cout << "  Silakan Pilih porsi : ";
             cin >> pilihanUser;
 
             switch (pilihanUser)
