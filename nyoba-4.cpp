@@ -19,19 +19,19 @@ int main()
         cout << "| 3. Gulai                |" << endl;
         cout << "| 0. Cukup                |" << endl;
         cout << "|=========================|" << endl;
-        cout << " :) Apakah Sudah cukup?? " << endl;
         cout << "Pilih jenis makanan : ";
         cin >> pilihan;
 
         switch (pilihan)
         {
         case 1:
+            cout << endl;
             cout << "|==========================|" << endl;
             cout << "|  Pilih porsi Sate:       |" << endl;
             cout << "|  1. Sate 10 tusuk - 10K  |" << endl;
             cout << "|  2. Sate 20 tusuk - 20K  |" << endl;
-            cout << "|  Silakan Pilih porsi :   |" << endl;
             cout << "============================" << endl;
+            cout << "  Silakan Pilih porsi : ";
             cin >> pilihanUser;
 
             switch (pilihanUser)
@@ -49,12 +49,13 @@ int main()
             break;
 
         case 2:
+            cout << endl;
             cout << "|==========================|" << endl;
             cout << "| Pilih porsi Soto         |:" << endl;
             cout << "|  1. Soto daging - 15K    |" << endl;
             cout << "|  2. Soto ayam - 20K      |" << endl;
-            cout << "|  Silakan Pilih porsi :   |" << endl;
-            cout << "|==========================|" << endl;
+           cout << " |==========================|" << endl;
+            cout << "  Silakan Pilih porsi : ";
             cin >> pilihanUser;
 
             switch (pilihanUser)
@@ -72,6 +73,7 @@ int main()
             break;
 
         case 3:
+            cout << endl;
             cout << "|============================|" << endl;
             cout << "|  Pilih porsi Gulai:        |" << endl;
             cout << "|  1. Gulai sapi - 20K       |" << endl;
