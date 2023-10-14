@@ -2,11 +2,14 @@
 using namespace std;
 
 void switchCase() {
-    cout << "Pilih Rumus Lingkaran atau Persegi: " << endl;
+    cout << "Pilih Rumus Luas Bangun : " << endl;
     cout << "1. Luas Lingkaran" << endl;
     cout << "2. Luas Persegi" << endl;
+    cout << "3. Luas Trapesium " << endl;
+
 
     int pilih;
+    cout << "Pilihan :" << endl;
     cin >> pilih;
 
     switch(pilih) {
@@ -21,13 +24,26 @@ void switchCase() {
         }
 
         case 2: {
-            // Menghitung Luas Persegi
+            // Menghitung Luas Segitiga
             double sisi;
             cout << "Masukkan panjang sisi persegi: ";
             cin >> sisi;
             double luas_persegi = sisi * sisi;
             cout << "Luas persegi adalah: " << luas_persegi << endl;
             break;
+        }
+
+        case 3: {
+            double alas1, alas2, tinggi;
+            cout << "masukan alas ke 1 : " << endl;
+            cin >> alas1;
+            cout << "masukan Alas ke 2 : " << endl;
+            cin >> alas2;
+            cout << "masukan tingginya : " << endl;
+            cin >> tinggi;
+            double luas_Trapesium = 0.5 * (alas1 + alas2) * tinggi;
+            cout << "Luas trapesium tersebut adalah : " << luas_Trapesium << endl;
+            break; 
         }
 
         default:
