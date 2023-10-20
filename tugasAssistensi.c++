@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void switchCase()
+void module1_07651()
 {
     int pilih_07651;
     string end_07651;
@@ -77,6 +77,6 @@ void switchCase()
 
 int main()
 {
-    switchCase();
+    module1_07651();
     return 0;
 }
