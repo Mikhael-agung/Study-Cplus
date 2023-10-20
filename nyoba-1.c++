@@ -125,12 +125,12 @@ void hasilBelajarSatu()
 void printPiramid()
 {
     // ! piramida FOR
-    int tinggi;
-    std::cout << "masukan nilai tinggi segitiga : " << endl;
-    std::cin >> tinggi;
+    int tinggi_07651;
+    std::cout << "masukan nilai tinggi_07651 segitiga : " << endl;
+    std::cin >> tinggi_07651;
 
-    for (int i = 1; i <= tinggi; i++){
-        for (int a = 1; a <= tinggi - i; a++){
+    for (int i = 1; i <= tinggi_07651; i++){
+        for (int a = 1; a <= tinggi_07651 - i; a++){
             std::cout << " ";
         }
         for (int d = 1; d <= 2 * i -1; d++){
@@ -145,9 +145,9 @@ int main()
 {
 
     float A, T, L;
-    cout << "Masukan Alas Segitiga: ";
+    cout << "Masukan alas_07651 Segitiga: ";
     cin >> A;
-    cout << "Masukan Tinggi Segitiga: ";
+    cout << "Masukan tinggi_07651 Segitiga: ";
     cin >> T;
     L = 0.5 * A * T;
     cout << "Luas Segitiga Adalah: ";

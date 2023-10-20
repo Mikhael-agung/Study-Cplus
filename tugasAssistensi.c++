@@ -26,11 +26,11 @@ void module1_07651()
         case 1:
         {
             // Menghitung Luas Lingkaran
-            double jari_jari;
+            double jari_07651;
             cout << endl;
             cout << "Masukkan jari-jari lingkaran: ";
-            cin >> jari_jari;
-            double luas_lingkaran = 3.14 * jari_jari * jari_jari;
+            cin >> jari_07651;
+            double luas_lingkaran = 3.14 * jari_07651 * jari_07651;
             cout << "Luas lingkaran adalah: " << luas_lingkaran << endl;
             break;
         }
@@ -38,28 +38,28 @@ void module1_07651()
         case 2:
         {
             // Menghitung Luas Segitiga
-            double alas, tinggi;
+            double alas_07651, tinggi_07651;
             cout << endl;
-            cout << "Masukkan alas segitiga: ";
-            cin >> alas;
-            cout << "Masukan Tinggi segitiga: ";
-            cin >> tinggi;
-            double luas_Segitiga = 0.5 * alas * tinggi;
+            cout << "Masukkan alas_07651 segitiga: ";
+            cin >> alas_07651;
+            cout << "Masukan tinggi_07651 segitiga: ";
+            cin >> tinggi_07651;
+            double luas_Segitiga = 0.5 * alas_07651 * tinggi_07651;
             cout << "Luas Segitiga adalah: " << luas_Segitiga << endl;
             break;
         }
 
         case 3:
         {
-            double alas1, alas2, tinggi; // Untuk Rumus Trapesium
+            double alas1_07651, alas2_07651, tinggi_07651; // Untuk Rumus Trapesium
             cout << endl;
-            cout << "masukan alas ke 1 : ";
-            cin >> alas1;
-            cout << "masukan Alas ke 2 : ";
-            cin >> alas2;
-            cout << "masukan tingginya : ";
-            cin >> tinggi;
-            double luas_Trapesium = 0.5 * (alas1 + alas2) * tinggi;
+            cout << "masukan alas_07651 ke 1 : ";
+            cin >> alas1_07651;
+            cout << "masukan alas_07651 ke 2 : ";
+            cin >> alas2_07651;
+            cout << "masukan tinggi_07651nya : ";
+            cin >> tinggi_07651;
+            double luas_Trapesium = 0.5 * (alas1_07651 + alas2_07651) * tinggi_07651;
             cout << "Luas trapesium tersebut adalah : " << luas_Trapesium << endl;
             break;
         }
