@@ -77,25 +77,59 @@ using namespace std;
 //     cout << "Terima kasih" << endl;
 // }
 
-void tugasPendahuluan()
-{
-    int angka;
-    cout << "Masukkan sebuah bilangan: ";
-    cin >> angka;
+// void tugasPendahuluan()
+// {
+//     int angka;
+//     cout << "Masukkan sebuah bilangan: ";
+//     cin >> angka;
 
-    if (angka % 2 == 0)
-    {
-        cout << angka << " adalah bilangan positif.";
+//     if (angka % 2 == 0)
+//     {
+//         cout << angka << " adalah bilangan positif.";
+//     }
+//     else
+//     {
+//        cout << " adalah bilangan negatif.";
+//     }
+// }
+
+void tugasBaru () {
+    int n = 5;  // Change this value to control the size of the pattern
+    for (int i = 1; i <= n; i++) {
+        // Print leading spaces
+        for (int j = n; j > i; j++) {
+            cout << "  ";
+        }
+        
+        // Print numbers in increasing order
+        for (int k = 1; k <= i; k++) {
+            cout << k;
+        }
+        
+        cout << endl;
     }
-    else
-    {
-       cout << " adalah bilangan negatif.";
+    
+    for (int i = n; i >= 1; i--) {
+        // Print leading spaces
+        for (int j = n; j > i; j++) {
+            cout << "  ";
+        }
+        
+        // Print numbers in decreasing order
+        for (int k = 1; k <= i; k++) {
+            cout << k;
+        }
+        
+        cout << endl;
     }
+    
+
 }
 
 int main()
 {
-    tugasPendahuluan();
+    // tugasPendahuluan();
+    tugasBaru();
     // module1_07651();
     return 0;
 }
