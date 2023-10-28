@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/agung/OneDrive/Desktop/Visual-Studio-Code/Study-C++",
-      "program": "c:/Users/agung/OneDrive/Desktop/Visual-Studio-Code/Study-C++/build/Debug/outDebug",
+      "cwd": "c:/Users/agung/OneDrive/Documents/Kuliah/Study-C++",
+      "program": "c:/Users/agung/OneDrive/Documents/Kuliah/Study-C++/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
