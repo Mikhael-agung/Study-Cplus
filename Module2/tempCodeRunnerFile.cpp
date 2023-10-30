@@ -8,7 +8,7 @@ int main()
     cin >> angka;
     for (int i = 1; i <= angka; i++)
     {
-        int sum = 0;
+        int sum = 1;
         for (int j = 1; j <= i; j++)
         {
             sum += j;
@@ -23,25 +23,20 @@ int main()
 
     cout << endl; 
 
-    for (int i = angka; i >= 1; i--)
-    {
-        for (int j = i; j >= 1; j--)
-        {
-            cout << j;
-            if (j != 1)
-            {
+    for(int i = angka; i >= 1; i--) {
+        for(int s = i; s >= 1; s--) {
+            cout << s;
+            if(s != 1) {
                 cout << " * ";
             }
         }
         cout << " = ";
 
-        int kali = 1;
-        for (int k = i; k >= 1; k--)
-        {
-            kali *= k;
+        int hasil = 1;
+        for(int a = i; a >= 1; a--) {
+            hasil *= a;
         }
-        cout << kali << endl;
+        cout << hasil << endl;
     }
-
     return 0;
 }
