@@ -8,7 +8,7 @@ int main()
     cin >> angka;
     for (int i = 1; i <= angka; i++)
     {
-        int sum = 1;
+        int sum = 0;
         for (int j = 1; j <= i; j++)
         {
             sum += j;
