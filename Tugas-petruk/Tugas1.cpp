@@ -43,6 +43,7 @@ int main()
                             
                             cout << "Masukan Nominal: ";
                             cin >> nominal;
+                            // pengkondisian jika saldo kurang atau lebih   
                             if (saldo >= nominal ){
                                 
                             }
