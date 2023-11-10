@@ -1,4 +1,4 @@
-#
+#include <iostream>
 
 using namespace std;
 
@@ -10,6 +10,7 @@ int main()
     int menuPilih = 0, pilih;
     // USER memesukan pin
     cout << "ATM SEDERHANA\n";
+    cout << pilih;
     while (ulang < 3)
     {
         cout << "Masukan No rekening anda : ";

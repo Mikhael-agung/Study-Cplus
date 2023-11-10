@@ -6,13 +6,13 @@ int main()
     // inisialiasai dan deklasrasi variable
     int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456, password = 10, input_pin = 0, input_rek = 0;
     int inputNoRek = 0, saldo = 1000;
-    int konfirmasi;
+    int konfirmasi, pilih;
     int nominal = 0;
     int ulang = 0, transfer = 0;
-    int pilih;
 
     // user memasukan pin
     cout << "program Atm\n";
+    cout << pilih << endl;
     while (ulang < 3)
     {
         cout << "masukan Nomor kartu anda : ";
@@ -20,7 +20,7 @@ int main()
         cout << "masukan Kata sandi anda : ";
         cin >> input_pin;
 
-        if((input_rek == nomor_kartu) && (input_pin == password))
+        if (input_rek == nomor_kartu && input_pin == password)
         {
             while (pilih != 0)
             {
@@ -40,56 +40,65 @@ int main()
                     {
                         cout << "Masukan No rekening tujuan anda : ";
                         cin >> inputNoRek;
-                        if (inputNoRek == defaultNoRekA || inputNoRek == defaultNoRekB ) {
-                            
+                        if (inputNoRek == defaultNoRekA || inputNoRek == defaultNoRekB)
+                        {
+
                             cout << "Masukan Nominal: ";
                             cin >> nominal;
-                            // pengkondisian jika saldo kurang atau lebih   
-                            if (saldo >= nominal ){
-                                
-                                // melakukan konfirmasi 
+                            // pengkondisian jika saldo kurang atau lebih
+                            if (saldo >= nominal)
+                            {
+
+                                // melakukan konfirmasi
                                 cout << "NO Rekening yang anda masukan" << inputNoRek << endl;
                                 cout << "Nominal yang anda masukan " << nominal << endl;
-                                cout << "Apakah yang anda masukan sudah benar? \n (bila ya klik 1 atau tidak klik 0)";
+                                cout << "Apakah yang anda masukan sudah benar? \n (bila ya klik 1 atau tidak klik 0)\n";
                                 cin >> konfirmasi;
 
-                                if(konfirmasi == 1){
-                                    cout << "transaksi berhasil";
-                                    transfer = 1;
-                                }else{
-                                    cout << "transaksi Dibatalkan";
+                                if (konfirmasi == 1)
+                                {
+                                    cout << "transaksi berhasil\n";
                                     transfer = 1;
                                 }
+                                else
+                                {
+                                    cout << "transaksi Dibatalkan";
+                                    transfer = 0;
+                                }
                             }
-                            
-                        }else { 
-                            cout <<"Maaf Nomor rekening yang anda masukan tidak terdaftar, Mohon masukan dengan benar \n";
                         }
+                        else
+                        {
+                            cout << "Maaf Nomor rekening yang anda masukan tidak terdaftar, Mohon masukan dengan benar \n";
+                        }
+                        transfer = 0;
+                        break;
+                    case 2:
+                        break;
+                    case 0:
+                        ulang = 3;
+                        cout << "Program berhenti";
+                        break;
+                    default:
+                        ulang = 3;
+                        break;
                     }
-                    break;
-                case 2: 
-                    break;
-                default:
-                    ulang = 3;
-                    break;
+                }
+            }
+        }else
+            {
+                cout << "masukan Pin dengan benar\n";
+                ulang++;
+                if (ulang == 2)
+                {
+                    cout << "Kesempatan terakhir!!\n";
+                }
+
+                if (ulang == 3)
+                {
+                    cout << "Kartu anda terblokir\n";
                 }
             }
         }
-        else
-        {
-            cout << "masukan Pin dengan benar\n";
-            ulang++;
-            if (ulang == 2)
-            {
-                cout << "Kesempatan terakhir!!\n";
-            }
-
-            if (ulang == 3 ){
-                cout << "Kartu anda terblokir\n";
-            }
-        }
+        return 0;
     }
-
-    cout << "Program berhenti";
-    return 0;
-}
