@@ -4,8 +4,9 @@ using namespace std;
 int main()
 {
     // inisialiasai dan deklasrasi variable
-    int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456, password = 10;
-    int noRek = 0, kode_kartu, pin, saldo = 1000;
+    int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456, password = 10, input_pin = 0, input_rek = 0;
+    int inputNoRek = 0, saldo = 1000;
+    int konfirmasi;
     int nominal = 0;
     int ulang = 0, transfer = 0;
     int pilih;
@@ -15,11 +16,11 @@ int main()
     while (ulang < 3)
     {
         cout << "masukan Nomor kartu anda : ";
-        cin >> kode_kartu;
+        cin >> input_rek;
         cout << "masukan Kata sandi anda : ";
-        cin >> pin;
+        cin >> input_pin;
 
-        if ((kode_kartu == nomor_kartu) && (pin == password))
+        if((input_rek == nomor_kartu) && (input_pin == password))
         {
             while (pilih != 0)
             {
@@ -38,14 +39,27 @@ int main()
                     while (transfer == 0)
                     {
                         cout << "Masukan No rekening tujuan anda : ";
-                        cin >> noRek;
-                        if (noRek == defaultNoRekA || noRek == defaultNoRekB ) {
+                        cin >> inputNoRek;
+                        if (inputNoRek == defaultNoRekA || inputNoRek == defaultNoRekB ) {
                             
                             cout << "Masukan Nominal: ";
                             cin >> nominal;
                             // pengkondisian jika saldo kurang atau lebih   
                             if (saldo >= nominal ){
                                 
+                                // melakukan konfirmasi 
+                                cout << "NO Rekening yang anda masukan" << inputNoRek << endl;
+                                cout << "Nominal yang anda masukan " << nominal << endl;
+                                cout << "Apakah yang anda masukan sudah benar? \n (bila ya klik 1 atau tidak klik 0)";
+                                cin >> konfirmasi;
+
+                                if(konfirmasi == 1){
+                                    cout << "transaksi berhasil";
+                                    transfer = 1;
+                                }else{
+                                    cout << "transaksi Dibatalkan";
+                                    transfer = 1;
+                                }
                             }
                             
                         }else { 
@@ -54,10 +68,7 @@ int main()
                     }
                     break;
                 case 2: 
-
                     break;
-
-
                 default:
                     ulang = 3;
                     break;
