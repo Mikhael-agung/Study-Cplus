@@ -85,7 +85,7 @@ int main()
                                             pass_transaction++;
                                             if (pass_transaction == 2)
                                             {
-                                                cout << "Ini Kesempatan Terakhir!!";
+                                                cout << "Ini Kesempatan Terakhir!!!";
                                             }
                                             if (pass_transaction == 3)
                                             {
