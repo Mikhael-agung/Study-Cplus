@@ -6,8 +6,9 @@ int main()
     // inisialiasai dan deklasrasi variable
     int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
         password = 10, input_pin = 0, input_rek = 0;
-    int inputNoRek = 0, saldo = 1000, pass_transaction = 0, pilih;
-    int konfirmasi, pin_transaction;
+    int inputNoRek = 0, pilih, saldo = 1000, pass_transaction = 0;
+    int konfirmasi, pin_transaction, pecahan;
+    int pecahan50 = 50, pecahan100 = 100;
     int ulang = 0, transfer = 0, nominal = 0;
 
     // user memasukan pin
@@ -49,7 +50,7 @@ int main()
                             if (saldo >= nominal)
                             {
                                 // melakukan konfirmasi
-                                cout << "NO Rekening yang anda masukan" << inputNoRek << endl;
+                                cout << "NO Rekening yang anda masukan 1" << inputNoRek << endl;
                                 cout << "Nominal yang anda masukan " << nominal << endl;
                                 cout << "Apakah yang anda masukan sudah benar? \n (bila ya klik 1 atau tidak klik 0) : ";
                                 cin >> konfirmasi;
@@ -73,9 +74,11 @@ int main()
                                             cin >> pilih;
                                             if (pilih != 0)
                                             {
-                                                transfer =1; 
-                                                pass_transaction= 3;
-                                            } else {
+                                                transfer = 1;
+                                                pass_transaction = 3;
+                                            }
+                                            else
+                                            {
                                                 cout << "terima kasih sudah melakukan transaksi";
                                             }
                                         }
@@ -103,14 +106,45 @@ int main()
                         transfer = 0;
                         break;
                     case 2:
-                        break;
+                        // tarik tunai
+                        while (pecahan != 0)
+                        {
+                            cout << "Pilih pecahan yang anda inginkan ";
+                            cout << "1. Pecahan 100";
+                            cout << "2. pecahan 50";
+                            cin >> pecahan;
+                            cout << "masukan Nominal yang ingin di tarik ";
+                            cin >> nominal;
+                            if (nominal >= pecahan50 || nominal > saldo || nominal > pecahan100)
+                            {
+                                switch (pecahan)
+                                {
+                                case 1:
+                                    while (pecahan100 = 0)
+                                    {
+                                    }
+                                    break;
+
+                                case 2:
+                                    break;
+
+                                default:
+                                    cout << "maaf Pilihan yang anda inginkan tidak ada";
+                                    break;
+                                }
+                                break;
+                            }else{
+                                cout << "nominal / saldo yang anda masukan kurang dari yang anda inginkan "; 
+                            }
+                        }
                     case 0:
                         ulang = 3;
                         cout << "Program berhenti";
                         break;
                     default:
-                        ulang = 3;
-                        pilih = 0;
+                        ulang = 0;
+                        pilih = 1;
+                        cout << "Pilihan tidak ada di menu\n";
                         break;
                     }
                 }
