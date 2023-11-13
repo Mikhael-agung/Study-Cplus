@@ -32,6 +32,7 @@ int main()
                 cout << "0. Exit\n";
                 cout << "Masukan Pilihan anda: ";
                 cin >> pilih;
+
                 switch (pilih)
                 {
                 case 1: // menu Transfer
@@ -49,7 +50,7 @@ int main()
                             if (saldo >= nominal)
                             {
                                 // melakukan konfirmasi
-                                cout << "NO Rekening yang anda masukan" << inputNoRek << endl;
+                                cout << "NO Rekening yang anda masukan " << inputNoRek << endl;
                                 cout << "Nominal yang anda masukan " << nominal << endl;
                                 cout << "Apakah yang anda masukan sudah benar? \n (bila ya klik 1 atau tidak klik 0) : ";
                                 cin >> konfirmasi;
@@ -73,10 +74,15 @@ int main()
                                             cin >> pilih;
                                             if (pilih != 0)
                                             {
-                                                transfer =1; 
-                                                pass_transaction= 3;
-                                            } else {
-                                                cout << "terima kasih sudah melakukan transaksi";
+                                                transfer = 1;
+                                                pass_transaction = 3;
+                                            }
+                                            else
+                                            {
+                                                cout << "terima kasih sudah melakukan transaksi\n";
+                                                transfer = 1;
+                                                pass_transaction = 3;
+                                                ulang = 3;
                                             }
                                         }
                                         else
@@ -131,5 +137,6 @@ int main()
             }
         }
     }
+    cout << "program selesai";
     return 0;
 }

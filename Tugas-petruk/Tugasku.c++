@@ -8,6 +8,8 @@ int main(){
 
     cout << "Selamat Datang Di ATM COK";
     cout << pilih << endl;
-    while}
+    while(pilih != 0) {
+
+    }
 
 }

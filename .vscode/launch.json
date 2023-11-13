@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/agung/OneDrive/Documents/Kuliah/Study-C++",
-      "program": "c:/Users/agung/OneDrive/Documents/Kuliah/Study-C++/build/Debug/outDebug",
+      "cwd": "c:/Users/agung/OneDrive/Documents/GitHub/Study-Cplus",
+      "program": "c:/Users/agung/OneDrive/Documents/GitHub/Study-Cplus/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
