@@ -8,6 +8,7 @@ int main()
         password = 10, input_pin = 0, input_rek = 0;
     int inputNoRek = 0, saldo = 1000, pass_transaction = 0, pilih;
     int konfirmasi, pin_transaction;
+    int pecahan100 = 100, pecahan50, pecahan;
     int ulang = 0, transfer = 0, nominal = 0;
 
     // user memasukan pin
@@ -109,6 +110,89 @@ int main()
                         transfer = 0;
                         break;
                     case 2:
+                        // tarik tunai
+                        cout << "anda masuk ke menu Tarik Tunai";
+                        while (pecahan != 0)
+                        {
+                            cout << "pilih pecahan yang ingin anda Ambil :";
+                            cout << "1. Pecahan 100RB";
+                            cout << "2. Pecahan 50RB";
+                            cin >> pecahan;
+                            switch (pecahan)
+                            {
+                            case 1:
+                                cout << "masukan nominal yang ingin anda ambil \n";
+                                cin >> nominal;
+                                if (nominal >= saldo)
+                                {
+                                    // konfirmasi transaksi
+                                    pass_transaction = 0; 
+                                    while (pass_transaction < 3)
+                                    {
+                                        cout << "masukan password anda";
+                                        cin >> pin_transaction;
+                                        if (pin_transaction == password)
+                                        {
+                                            if (nominal % pecahan100 == 0)
+                                            {
+                                                pecahan50 = nominal / pecahan100;
+                                                saldo = saldo - nominal;
+                                                cout << "sisah saldo anda " << saldo << endl;
+                                                cout << "apakah anda ingin melakukan transaksi lagi \n (klik 1 bila YA dan 0 bila TIDAK)";
+                                                cin >> pilih;
+                                                if (pilih != 0) {
+                                                    pilih = 1;
+                                                    pass_transaction = 3;
+                                                }else{
+                                                    pass_transaction = 3;
+                                                    
+                                                }
+                                            }
+                                            else
+                                            {
+                                                cout << "maaf pengambilan uang minimal 100RB";
+                                                cout << "apakah anda ingin melakukan transaksi lagi\n (klik 1 bila YA dan 0 bila TIDAK)";
+                                                cin >> pilih;
+                                                if (pilih != 0)
+                                                {
+                                                    pilih = 1;
+                                                    pecahan100 = 3;
+                                                }
+                                                else
+                                                {
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            pass_transaction++;
+                                            cout << "pin yang anda masukan salah";
+                                            if (pass_transaction == 2)
+                                            {
+                                                cout << "Ini kesempatan terakhir, mohon masukan dengan benar";
+                                            }
+                                            if (pass_transaction == 3)
+                                            {
+                                                cout << "Kartu anda terblokir mohon Hubungi CS kami";
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "Saldo anda tidak cukup";
+                                    cout << "apakah anda ingin melakukan transaksi lagi\n (jika iya ketik 1 dan tidak ketik 0)" << endl;
+                                    cin >> pilih;
+                                    if (pilih == 0)
+                                    {
+                                        ulang = 3;
+                                    }
+                                }
+                                break;
+                            default:
+                                break;
+                            }
+                        }
                         break;
                     case 0:
                         ulang = 3;
