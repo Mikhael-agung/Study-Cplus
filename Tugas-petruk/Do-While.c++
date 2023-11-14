@@ -6,10 +6,10 @@ int main()
     // inisialiasai dan deklasrasi variable
     int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
         password = 10, input_pin = 0, input_rek = 0;
-    int inputNoRek = 0, pilih, saldo = 1000, pass_transaction = 0;
+    int inputNoRek = 0, pilih, saldo = 1000, mainMenu = 0;
     int konfirmasi, pin_transaction, pecahan;
     int pecahan50 = 50, pecahan100 = 100;
-    int ulang = 0, transfer = 0, nominal = 0;
+    int ulang = 0, menuUtama = 0, nominal = 0;
 
     // user memasukan pin
     cout << "program Atm\n";
@@ -26,7 +26,7 @@ int main()
             while (pilih != 0)
             {
                 cout << "masuk ke menu utama\n";
-                cout << "1. Transfer\n";
+                cout << "1. menuUtama\n";
                 cout << "2. Tarik tunai\n";
                 cout << "3. info saldo\n";
                 cout << "4. setor tunai\n";
@@ -35,9 +35,9 @@ int main()
                 cin >> pilih;
                 switch (pilih)
                 {
-                case 1: // menu Transfer
-                    cout << "Anda berada di Menu transfer\n";
-                    while (transfer == 0)
+                case 1: // menu menuUtama
+                    cout << "Anda berada di Menu menuUtama\n";
+                    while (menuUtama == 0)
                     {
                         cout << "Masukan No rekening tujuan anda : ";
                         cin >> inputNoRek;
@@ -57,8 +57,8 @@ int main()
                                 if (konfirmasi != 0)
                                 {
                                     // password confirm
-                                    pass_transaction = 0;
-                                    while (pass_transaction < 3)
+                                    mainMenu = 0;
+                                    while (mainMenu < 3)
                                     {
                                         // user menginputkan pin jika transaksi sudah benar
                                         cout << "masukan password Konfirmasi : ";
@@ -67,15 +67,15 @@ int main()
                                         if (pin_transaction == input_pin)
                                         {
                                             saldo = saldo - nominal;
-                                            cout << "transfer yang anda lakukan berhasil";
+                                            cout << "menuUtama yang anda lakukan berhasil";
                                             cout << "sisa saldo anda adalah " << saldo << endl;
                                             // jika user ingin melakukan transaksi lagi.
                                             cout << "apakah anda ingin melakukan transaksi lagi\n (jika iya ketik 1 dan tidak ketik 0)" << endl;
                                             cin >> pilih;
                                             if (pilih != 0)
                                             {
-                                                transfer = 1;
-                                                pass_transaction = 3;
+                                                menuUtama = 1;
+                                                mainMenu = 3;
                                             }
                                             else
                                             {
@@ -85,12 +85,12 @@ int main()
                                         else
                                         {
                                             cout << "masukan Password dengan benar";
-                                            pass_transaction++;
-                                            if (pass_transaction == 2)
+                                            mainMenu++;
+                                            if (mainMenu == 2)
                                             {
                                                 cout << "Ini Kesempatan Terakhir!!!";
                                             }
-                                            if (pass_transaction == 3)
+                                            if (mainMenu == 3)
                                             {
                                                 cout << "kartu anda terblokir tolong Hubungi CS bank";
                                             }
@@ -103,7 +103,7 @@ int main()
                         {
                             cout << "Maaf Nomor rekening yang anda masukan tidak terdaftar, Mohon masukan dengan benar \n";
                         }
-                        transfer = 0;
+                        menuUtama = 0;
                         break;
                     case 2:
                         // tarik tunai
@@ -133,8 +133,10 @@ int main()
                                     break;
                                 }
                                 break;
-                            }else{
-                                cout << "nominal / saldo yang anda masukan kurang dari yang anda inginkan "; 
+                            }
+                            else
+                            {
+                                cout << "nominal / saldo yang anda masukan kurang dari yang anda inginkan ";
                             }
                         }
                     case 0:
