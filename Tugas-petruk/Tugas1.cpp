@@ -76,13 +76,14 @@ int main()
                                             cin >> pilih;
                                             if (pilih != 0)
                                             {
+                                                mainMenu = 3;
                                                 menuUtama = 1;
                                             }
                                             else
                                             {
                                                 cout << "terima kasih sudah melakukan transaksi\n";
-                                                mainMenu = 1;
-                                                menuUtama = 3;
+                                                mainMenu = 3;
+                                                menuUtama = 1;
                                                 ulang = 3;
                                             }
                                         }
@@ -111,7 +112,8 @@ int main()
                                     }
                                     else
                                     {
-                                        ulang = 3;
+                                        mainMenu = 3;
+                                        menuUtama = 1;
                                     }
                                 }
                             }
@@ -127,9 +129,8 @@ int main()
                                 }
                                 else
                                 {
-                                    mainMenu = 1;
                                     menuUtama = 3;
-                                    ulang = 3;
+                                    
                                 }
                             }
                         }
@@ -145,7 +146,8 @@ int main()
                             }
                             else
                             {
-                                ulang = 3;
+                                mainMenu = 3;
+                                menuUtama = 1;
                             }
                         }
                     }
