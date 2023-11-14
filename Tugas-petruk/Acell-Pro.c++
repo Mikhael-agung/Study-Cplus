@@ -29,7 +29,7 @@ int main()
             do
             {
                 cout << "Menu: \n";
-                cout << "1. Transfer \n";
+                cout << "1. menuUtama \n";
                 cout << "2. Tarik Tunai \n";
                 cout << "3. Setor Tunai \n";
                 cout << "4. Info Saldo \n";
@@ -44,12 +44,12 @@ int main()
                     // Implementasi Program Gawe Case 1
                     do
                     {
-                        cout << "#--------------------------TRANSFER---------------------------#\n\n";
+                        cout << "#--------------------------menuUtama---------------------------#\n\n";
                         cout << "Masukkan Nomor Rekening Tujuan: ";
                         cin >> NomorRekening;
                         if (NomorRekening == default_NomorRekening)
                         {
-                            cout << "Masukkan Nominal Yang Ingin di Transfer: Rp.";
+                            cout << "Masukkan Nominal Yang Ingin di menuUtama: Rp.";
                             cin >> nominal;
                             cout << "                                           ^^^^^^ \n";
                             if (default_Saldo >= nominal)
