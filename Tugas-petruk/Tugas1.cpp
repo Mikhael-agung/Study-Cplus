@@ -146,8 +146,8 @@ int main()
                             }
                             else
                             {
-                                mainMenu = 3;
-                                menuUtama = 1;
+                                pilih = 0;
+                                ulang = 0;
                             }
                         }
                     }
