@@ -6,10 +6,10 @@ int main()
     // inisialiasai dan deklasrasi variable
     int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
         password = 10, input_pin = 0, input_rek = 0;
-    int inputNoRek = 0, saldo = 1000, mainMenu = 0, pilih;
+    int inputNoRek = 0, saldo = 100000, mainMenu = 0, pilih;
     int withDraw;
     int konfirmasi, pin_transaction;
-    // int pecahan100 = 100, pecahan;
+    int pecahan100 = 100;
     int ulang = 0, menuUtama = 0, nominal = 0;
 
     // user memasukan pin
@@ -165,9 +165,68 @@ int main()
                     case 1:
                         cout << "masukan Nominal\n";
                         cin >> nominal;
-                        if (nominal >= saldo)
+                        if (saldo >= nominal)
                         {
-                            cout << "terimakasih ";
+                            // konfirmasi Transaksi
+                            withDraw = 0;
+                            while (withDraw < 3)
+                            {
+                                cout << "masukan Pin anda";
+                                cin >> pin_transaction;
+                                if (pin_transaction == input_pin)
+                                {
+                                    if (nominal % pecahan100 == 0)
+                                    {
+                                        pecahan100 = nominal / pecahan100;
+                                        nominal = nominal - saldo;
+                                        cout << "Sisa saldo anda adalah" << saldo << endl;
+                                        cout << "Apakah anda ingin melakukan Transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
+                                        cin >> pilih;
+                                        if (pilih != 0)
+                                        {
+                                            pilih = 0;
+                                            ulang = 3;
+                                        }
+                                        else
+                                        {
+                                            menuUtama = 1;
+                                            withDraw = 3;
+                                            ulang = 3;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        cout << "Maaf nominal yang anda masukan kurang dari 100RB";
+                                        cout << "Apakah anda ingin melakukan Transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
+                                        cin >> konfirmasi;
+                                        if (konfirmasi != 0)
+                                        {
+                                            pilih = 0;
+                                            ulang = 3;
+                                        }
+                                        else
+                                        {
+                                            menuUtama = 1;
+                                            withDraw = 3;
+                                            ulang = 3;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "Maaf Pin anda salah, Mohon masukan dengan benar";
+                                    withDraw++;
+                                    if (withDraw == 2)
+                                    {
+                                        cout << "ini percobaan terakhir";
+                                    }
+
+                                    if (withDraw == 3)
+                                    {
+                                        cout << "maaf Kartu anda terblokir";
+                                    }
+                                }
+                            }
                         }
                         else
                         {
