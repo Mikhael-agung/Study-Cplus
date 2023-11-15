@@ -7,7 +7,7 @@ int main()
     int defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
         password = 10, input_pin = 0, input_rek = 0;
     int inputNoRek = 0, saldo = 1000, mainMenu = 0, pilih;
-    // int withDraw = 0;
+    int withDraw;
     int konfirmasi, pin_transaction;
     // int pecahan100 = 100, pecahan;
     int ulang = 0, menuUtama = 0, nominal = 0;
@@ -69,15 +69,15 @@ int main()
                                         if (pin_transaction == input_pin)
                                         {
                                             saldo = saldo - nominal;
-                                            cout << "menuUtama yang anda lakukan berhasil";
+                                            cout << "Transfer yang anda lakukan berhasil\n";
                                             cout << "sisa saldo anda adalah " << saldo << endl;
                                             // jika user ingin melakukan transaksi lagi.
                                             cout << "apakah anda ingin melakukan transaksi lagi\n (jika iya ketik 1 dan tidak ketik 0)" << endl;
                                             cin >> pilih;
                                             if (pilih != 0)
                                             {
-                                                mainMenu = 3;
-                                                menuUtama = 1;
+                                                pilih = 0;
+                                                ulang = 3;
                                             }
                                             else
                                             {
@@ -130,7 +130,6 @@ int main()
                                 else
                                 {
                                     menuUtama = 3;
-                                    
                                 }
                             }
                         }
@@ -138,34 +137,63 @@ int main()
                         {
                             cout << "Maaf Nomor rekening yang anda masukan tidak terdaftar, Mohon masukan dengan benar \n";
                             cout << "apakah anda ingin menginputkanya kembali\n (klik 1 Jika YA dan 0 Jika Tidak)";
-                            cin >> konfirmasi;
-                            if (konfirmasi != 0)
+                            cin >> pilih;
+                            if (pilih != 0)
                             {
-                                menuUtama = 1;
+                                pilih = 0;
                                 ulang = 3;
                             }
                             else
                             {
-                                pilih = 0;
-                                ulang = 0;
+                                mainMenu = 3;
+                                menuUtama = 1;
+                                ulang = 3;
                             }
                         }
                     }
                     break;
                 case 2:
-                    // // tarik tunai
-                    // cout << "Menu Tarik Tunai";
-                    // cout << "Silakan Pilih Nominal Yang ingin anda ambil  ";
-                    // cout << "1. Pecahan 100RB";
-                    // cout << "2. Pecahan 50RB";
-                    // cout << pilih;
-
-                    // while ()
-                    // {
-                    //     /* code */
-                    // }
-
+                    // tarik tunai
+                    cout << "Anda masuk ke menu tarik Tunai\n";
+                    cout << "Menu Tarik Tunai\n";
+                    cout << "Silakan Pilih Nominal Yang ingin anda ambil \n";
+                    cout << "1. Pecahan 100RB\n";
+                    cout << "2. Pecahan 50RB\n";
+                    cin >> withDraw;
+                    switch (withDraw)
+                    {
+                    case 1:
+                        cout << "masukan Nominal\n";
+                        cin >> nominal;
+                        if (nominal >= saldo)
+                        {
+                            cout << "terimakasih ";
+                        }
+                        else
+                        {
+                            cout << "Maaf saldo anda kurang" << endl;
+                            cout << "apakah anda ingi melakukan transaksi lain\n (Klik 1 jika Ya Dan 0 Jika Tidak)";
+                            cin >> pilih;
+                            if (pilih != 0)
+                            {
+                                ulang = 3;
+                            }
+                            else
+                            {
+                                cout << "out";
+                                mainMenu = 3;
+                                menuUtama = 1;
+                                ulang = 3;
+                            }
+                        }
+                        break;
+                    default:
+                        cout << "pilihan tidak ada";
+                        pilih = 1;
+                        break;
+                    }
                     break;
+                    // bagian Tarik Tunai
 
                 case 0:
                     ulang = 3;
