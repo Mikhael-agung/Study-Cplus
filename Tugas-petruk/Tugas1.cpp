@@ -351,7 +351,7 @@ int main()
                             if (pilih != 0)
                             {
                                 pilih = 0;
-                                ulang = 3; 
+                                ulang = 3;
                             }
                             else
                             {
@@ -375,9 +375,32 @@ int main()
                     }
                     break;
 
-                    case 4: 
-                    //setor Tunai 
-                    
+                case 4:
+                    // setor Tunai
+                    cout << "Masuk ke menu setor tunai\n ";
+                    cout << "masukan lembar Pecahan uang 50/100 : ";
+                    cin >> nominal;
+                    // proses Identifikasi Nominal
+                    if (nominal % pecahan100 == 0 || nominal % pecahan50 == 0)
+                    {
+                        cout << "bagus";
+                    }
+                    else
+                    {
+                        cout << "nominal Pecahan Harus 100 atau 50\n";
+                        cout << "apakah anda ingin melakukan transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
+                        cin >> pilih;
+                        if (pilih != 0)
+                        {
+                            ulang = 3;
+                        }
+                        else
+                        {
+                            ulang = 3;
+                            menuUtama = 3;
+                        }
+                    }
+                    break;
                 case 0:
                     ulang = 3;
                     break;
