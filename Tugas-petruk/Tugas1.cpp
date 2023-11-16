@@ -264,7 +264,7 @@ int main()
                                         saldo = saldo - nominal;
                                         cout << "Sisa saldo yang ada di rekening anda" << saldo << endl;
                                         cout << "apakah anda ingin melakukan transaksi lain? \n (Klik 1 Jika YA dan 0 Jika Tidak)";
-                                        cin >> konfirmasi;
+                                        cin >> pilih;
                                         if (pilih != 0)
                                         {
                                             withDraw = 3;
@@ -280,7 +280,7 @@ int main()
                                     {
                                         cout << "Maaf Nominal yang anda masukan kurang dari 50RB atau tidak sama dengan kelipatan 50RB";
                                         cout << "apakah Anda ingin melakukan transaksi yang lain";
-                                        cin >> pilih;
+                                        cin >> konfirmasi;
                                         if (konfirmasi != 0)
                                         {
                                             pilih = 0;
@@ -332,6 +332,10 @@ int main()
                     }
                     break;
                     // bagian Tarik Tunai
+
+                case 3: 
+                    // info saldo
+                    break;
 
                 case 0:
                     ulang = 3;
