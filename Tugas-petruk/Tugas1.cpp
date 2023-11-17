@@ -90,15 +90,18 @@ int main()
                                         }
                                         else
                                         {
-                                            cout << "masukan Password dengan benar";
+                                            cout << "masukan Password dengan benar\n";
                                             mainMenu++;
                                             if (mainMenu == 2)
                                             {
-                                                cout << "Ini Kesempatan Terakhir!!!";
+                                                cout << "Ini Kesempatan Terakhir!!!\n";
                                             }
                                             if (mainMenu == 3)
                                             {
-                                                cout << "kartu anda terblokir tolong Hubungi CS bank";
+                                                cout << "kartu anda terblokir tolong Hubungi CS bank\n";
+                                                menuUtama = 1;
+                                                pilih = 0;
+                                                ulang = 3;
                                             }
                                         }
                                     }
@@ -220,7 +223,10 @@ int main()
                                     }
                                     if (withDraw == 3)
                                     {
-                                        cout << "maaf Kartu anda terblokir";
+                                        cout << "maaf Kartu anda terblokir\n";
+                                        menuUtama = 1;
+                                        pilih = 0;
+                                        ulang = 3;
                                     }
                                 }
                             }
@@ -253,13 +259,12 @@ int main()
                             withDraw = 0;
                             while (withDraw < 3)
                             {
-                                cout << "Masukan PIN transaksi anda";
+                                cout << "Masukan PIN transaksi anda ";
                                 cin >> pin_transaction;
                                 if (pin_transaction == input_pin)
                                 {
                                     if (nominal % pecahan50 == 0)
                                     {
-
                                         pecahan50 = nominal / pecahan50;
                                         saldo = saldo - nominal;
                                         cout << "Sisa saldo yang ada di rekening anda" << saldo << endl;
@@ -303,6 +308,9 @@ int main()
                                     if (withDraw == 3)
                                     {
                                         cout << "MAAF KARTU ANDA TERBLOKIR, SEGERA HUBUNGI CS KAMI\n";
+                                        pilih = 0;
+                                        menuUtama = 1;
+                                        ulang = 3;
                                     }
                                 }
                             }
@@ -365,11 +373,14 @@ int main()
                             cout << "anda sudah memasukan PIN yang salah sebanyak " << inpoSaldo << endl;
                             if (inpoSaldo == 2)
                             {
-                                cout << "ini kesempatan terakhir";
+                                cout << "ini kesempatan terakhir\n ";
                             }
                             if (inpoSaldo == 3)
                             {
-                                cout << "Kartu anda terblokir";
+                                cout << "Kartu anda terblokir\n";
+                                menuUtama = 1;
+                                pilih = 0;
+                                ulang = 3;
                             }
                         }
                     }
@@ -394,7 +405,7 @@ int main()
                         {
                         case 1:
                             // Rekening Sendiri
-                            mainMenu =0;
+                            mainMenu = 0;
                             while (mainMenu < 3)
                             {
                                 // konfirmasi transaksi
@@ -403,26 +414,32 @@ int main()
                                 if (pin_transaction == input_pin)
                                 {
                                     cout << "bagus lanjutkan";
-                                }else{
-                                    cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << pin_transaction << endl;
+                                }
+                                else
+                                {
+                                    cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << mainMenu << endl;
                                     cout << "anda di beri kesempatan sebanyak 3 kali";
                                     pin_transaction++;
-                                    if (pin_transaction == 2){
+                                    if (pin_transaction == 2)
+                                    {
                                         cout << "ini kesempatan Terakhir";
                                     }
 
-                                    if(pin_transaction == 3){
-                                        cout << "Maaf "
+                                    if (pin_transaction == 3)
+                                    {
+                                        cout << "Maaf Kartu anda terblokir karena anda sudah memasukan PIN yang salah sebanyak " << mainMenu;
+                                        menuUtama = 1;
+                                        ulang = 3;
+                                        pilih = 0;
                                     }
                                 }
-                                
                             }
-                            
                             break;
 
                         case 2:
                             break;
                         default:
+                            pilih = 0;
                             ulang = 3;
                             break;
                         }
