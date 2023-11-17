@@ -7,7 +7,7 @@ int main()
     int pilih, defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
                password = 10, input_pin = 0, input_rek = 0;
     int inputNoRek = 0, saldo = 100000, mainMenu = 0;
-    int withDraw, inpoSaldo;
+    int withDraw, inpoSaldo, pilihRekening;
     int konfirmasi, pin_transaction;
     int pecahan100 = 100, pecahan50 = 50;
     int ulang = 0, menuUtama = 0, nominal = 0;
@@ -383,7 +383,49 @@ int main()
                     // proses Identifikasi Nominal
                     if (nominal % pecahan100 == 0 || nominal % pecahan50 == 0)
                     {
-                        cout << "bagus";
+                        cout << "jumlah Uang yang anda setorkan " << nominal << endl;
+                        cout << "setor ke Rekening : ";
+                        cin >> pilihRekening;
+                        cout << "Rekening anda";
+                        cout << "Rekening Lain";
+                        cout << "klik angka berapa pun untuk membatalkan Transaksi";
+                        menuUtama = 0;
+                        switch (pilihRekening)
+                        {
+                        case 1:
+                            // Rekening Sendiri
+                            mainMenu =0;
+                            while (mainMenu < 3)
+                            {
+                                // konfirmasi transaksi
+                                cout << "Masukan PIN transaksi anda";
+                                cin >> pin_transaction;
+                                if (pin_transaction == input_pin)
+                                {
+                                    cout << "bagus lanjutkan";
+                                }else{
+                                    cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << pin_transaction << endl;
+                                    cout << "anda di beri kesempatan sebanyak 3 kali";
+                                    pin_transaction++;
+                                    if (pin_transaction == 2){
+                                        cout << "ini kesempatan Terakhir";
+                                    }
+
+                                    if(pin_transaction == 3){
+                                        cout << "Maaf "
+                                    }
+                                }
+                                
+                            }
+                            
+                            break;
+
+                        case 2:
+                            break;
+                        default:
+                            ulang = 3;
+                            break;
+                        }
                     }
                     else
                     {
