@@ -7,9 +7,9 @@ int main()
     int pilih, defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
                password = 10, input_pin = 0, input_rek = 0;
     int inputNoRek = 0, saldo = 100000, mainMenu = 0;
-    int withDraw, inpoSaldo;
+    int withDraw, inpoSaldo, pilihRekening;
     int konfirmasi, pin_transaction;
-    int pecahan100 = 100, pecahan50 = 50;
+    int pecahan100 = 100000, pecahan50 = 50000;
     int ulang = 0, menuUtama = 0, nominal = 0;
     // int pilih;
 
@@ -90,15 +90,18 @@ int main()
                                         }
                                         else
                                         {
-                                            cout << "masukan Password dengan benar";
+                                            cout << "masukan Password dengan benar\n";
                                             mainMenu++;
                                             if (mainMenu == 2)
                                             {
-                                                cout << "Ini Kesempatan Terakhir!!!";
+                                                cout << "Ini Kesempatan Terakhir!!!\n";
                                             }
                                             if (mainMenu == 3)
                                             {
-                                                cout << "kartu anda terblokir tolong Hubungi CS bank";
+                                                cout << "kartu anda terblokir tolong Hubungi CS bank\n";
+                                                menuUtama = 1;
+                                                pilih = 0;
+                                                ulang = 3;
                                             }
                                         }
                                     }
@@ -185,7 +188,7 @@ int main()
                                         cin >> pilih;
                                         if (pilih != 0)
                                         {
-                                            withDraw = 3;
+                                            pilih = 1;
                                         }
                                         else
                                         {
@@ -200,27 +203,33 @@ int main()
                                         cout << "Apakah anda ingin melakukan Transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
                                         cin >> konfirmasi;
                                         if (konfirmasi != 0)
-                                        {
-                                            pilih = 0;
-                                            ulang = 3;
+                                        {   
+                                            withDraw = 3;
+                                            menuUtama = 0; 
+                                            
                                         }
                                         else
                                         {
+                                            withDraw = 3;
+                                            pilih = 0;
                                             ulang = 3;
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    cout << "Maaf Pin anda salah, Mohon masukan dengan benar";
+                                    cout << "Maaf Pin anda salah, Mohon masukan dengan benar\n";
                                     withDraw++;
                                     if (withDraw == 2)
                                     {
-                                        cout << "ini percobaan terakhir";
+                                        cout << "ini percobaan terakhir\n ";
                                     }
                                     if (withDraw == 3)
                                     {
-                                        cout << "maaf Kartu anda terblokir";
+                                        cout << "maaf Kartu anda terblokir\n";
+                                        menuUtama = 1;
+                                        pilih = 0;
+                                        ulang = 3;
                                     }
                                 }
                             }
@@ -253,13 +262,12 @@ int main()
                             withDraw = 0;
                             while (withDraw < 3)
                             {
-                                cout << "Masukan PIN transaksi anda";
+                                cout << "Masukan PIN transaksi anda ";
                                 cin >> pin_transaction;
                                 if (pin_transaction == input_pin)
                                 {
                                     if (nominal % pecahan50 == 0)
                                     {
-
                                         pecahan50 = nominal / pecahan50;
                                         saldo = saldo - nominal;
                                         cout << "Sisa saldo yang ada di rekening anda" << saldo << endl;
@@ -303,6 +311,9 @@ int main()
                                     if (withDraw == 3)
                                     {
                                         cout << "MAAF KARTU ANDA TERBLOKIR, SEGERA HUBUNGI CS KAMI\n";
+                                        pilih = 0;
+                                        menuUtama = 1;
+                                        ulang = 3;
                                     }
                                 }
                             }
@@ -365,11 +376,14 @@ int main()
                             cout << "anda sudah memasukan PIN yang salah sebanyak " << inpoSaldo << endl;
                             if (inpoSaldo == 2)
                             {
-                                cout << "ini kesempatan terakhir";
+                                cout << "ini kesempatan terakhir\n ";
                             }
                             if (inpoSaldo == 3)
                             {
-                                cout << "Kartu anda terblokir";
+                                cout << "Kartu anda terblokir\n";
+                                menuUtama = 1;
+                                pilih = 0;
+                                ulang = 3;
                             }
                         }
                     }
@@ -383,7 +397,55 @@ int main()
                     // proses Identifikasi Nominal
                     if (nominal % pecahan100 == 0 || nominal % pecahan50 == 0)
                     {
-                        cout << "bagus";
+                        cout << "jumlah Uang yang anda setorkan " << nominal << endl;
+                        cout << "setor ke Rekening : ";
+                        cin >> pilihRekening;
+                        cout << "Rekening anda";
+                        cout << "Rekening Lain";
+                        cout << "klik angka berapa pun untuk membatalkan Transaksi";
+                        menuUtama = 0;
+                        switch (pilihRekening)
+                        {
+                        case 1:
+                            // Rekening Sendiri
+                            mainMenu = 0;
+                            while (mainMenu < 3)
+                            {
+                                // konfirmasi transaksi
+                                cout << "Masukan PIN transaksi anda";
+                                cin >> pin_transaction;
+                                if (pin_transaction == input_pin)
+                                {
+                                    cout << "bagus lanjutkan";
+                                }
+                                else
+                                {
+                                    cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << mainMenu << endl;
+                                    cout << "anda di beri kesempatan sebanyak 3 kali";
+                                    pin_transaction++;
+                                    if (pin_transaction == 2)
+                                    {
+                                        cout << "ini kesempatan Terakhir";
+                                    }
+
+                                    if (pin_transaction == 3)
+                                    {
+                                        cout << "Maaf Kartu anda terblokir karena anda sudah memasukan PIN yang salah sebanyak " << mainMenu;
+                                        menuUtama = 1;
+                                        ulang = 3;
+                                        pilih = 0;
+                                    }
+                                }
+                            }
+                            break;
+
+                        case 2:
+                            break;
+                        default:
+                            pilih = 0;
+                            ulang = 3;
+                            break;
+                        }
                     }
                     else
                     {

@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int defaultNoRek = 123456, defaultNoRekA = 22222, defaultNoRekB = 33333, defaultPin = 1234, pin = 0, noRek = 0, inputRek = 0, inputPin = 0;
-    int saldo = 100, nominal = 0, pecahan, pecahan50 = 50, pecahan100 = 100;
+    int saldo = 100000, nominal = 0, pecahan, pecahan50 = 50, pecahan100 = 100;
     int ulang = 0, ulangNorek = 0, konfirmasi = 0;
     int ulangMenu = 0, pilih;
     int kodeTransaksi, pilihRekening, transaksiA = 88777, harga = 10;
