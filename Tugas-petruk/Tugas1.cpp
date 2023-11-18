@@ -9,7 +9,7 @@ int main()
     int inputNoRek = 0, saldo = 100000, mainMenu = 0;
     int withDraw, inpoSaldo, pilihRekening;
     int konfirmasi, pin_transaction;
-    int pecahan100 = 100, pecahan50 = 50;
+    int pecahan100 = 100000, pecahan50 = 50000;
     int ulang = 0, menuUtama = 0, nominal = 0;
     // int pilih;
 
@@ -188,7 +188,7 @@ int main()
                                         cin >> pilih;
                                         if (pilih != 0)
                                         {
-                                            withDraw = 3;
+                                            pilih = 1;
                                         }
                                         else
                                         {
@@ -203,23 +203,26 @@ int main()
                                         cout << "Apakah anda ingin melakukan Transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
                                         cin >> konfirmasi;
                                         if (konfirmasi != 0)
-                                        {
-                                            pilih = 0;
-                                            ulang = 3;
+                                        {   
+                                            withDraw = 3;
+                                            menuUtama = 0; 
+                                            
                                         }
                                         else
                                         {
+                                            withDraw = 3;
+                                            pilih = 0;
                                             ulang = 3;
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    cout << "Maaf Pin anda salah, Mohon masukan dengan benar";
+                                    cout << "Maaf Pin anda salah, Mohon masukan dengan benar\n";
                                     withDraw++;
                                     if (withDraw == 2)
                                     {
-                                        cout << "ini percobaan terakhir";
+                                        cout << "ini percobaan terakhir\n ";
                                     }
                                     if (withDraw == 3)
                                     {
