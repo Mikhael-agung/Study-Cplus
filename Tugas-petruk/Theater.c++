@@ -5,10 +5,10 @@ int main()
 {
     string default_account = "bujed@theater.com", login;
     int default_pin = 123456;
-    int poin = 1000000, jumlahTiket;
+    int poin = 1000000, jumlahTiket, TopUP = 100000;
     // int tiketing = 0;
-    int menuUtama = 0;
-    int pilih, pin;
+    int menuUtama;
+    int pilih, pin, nominal;
     int ulang = 0;
     string konfirmasi;
 
@@ -36,9 +36,10 @@ int main()
                 switch (pilih)
                 {
                 case 1:
+                    // Menu Check Poin
                     cout << "Menu Check Poin\n";
                     cout << "Sisa Poin anda saat ini " << poin << endl;
-                    cout << "apakah anda ingin Kembali Ke menu Utama \n (Silakan Ketika YA Atau tidak)";
+                    cout << "apakah anda ingin Kembali Ke menu Utama => \n (Silakan Ketika YA Atau tidak)";
                     cin >> konfirmasi;
                     if (konfirmasi == "YA" || konfirmasi == "ya")
                     {
@@ -47,14 +48,37 @@ int main()
                     }
                     else
                     {
-                        cout << "terima kasih sudah Mengunjungi AWC Theater";
                         ulang = 3;
                         pilih = 0;
                     }
                     break;
+                    // Menu Check Poin
                 case 2:
                     // menu top up
+                    cout << "Masukan jumlah Poin yang ingin anda top Up : ";
+                    cin >> nominal;
+                    if (TopUP < nominal)
+                    {
+                        cout << "Lanjut Boss \n";
+                    }
+                    else
+                    {
+                        cout << "Maaf jumlah Minimum untuk TopUP adalah 100RB\n";
+                        cout << "apakah Anda ingin Kembali ke Menu Utama => ";
+                        cin >> konfirmasi;
+                        if (konfirmasi == "YA" || konfirmasi == "ya")
+                        {
+                            ulang = 3;
+                            menuUtama = 3;
+                        }
+                        else
+                        {
+                            ulang = 3;
+                            pilih = 0;
+                        }
+                    }
                     break;
+                    // menu TopUP
                 case 3:
                     // pemilihan Film
                     while (pilih != 0)
@@ -63,7 +87,7 @@ int main()
                         cout << "1. The Hunger Games The ballad of songbirds & snakes";
                         cout << "2. The Marvels";
                         cout << "3. The animal Kingdom";
-                        cout << "0. Top up POIN";
+                        cout << "0. kembali";
                         cin >> pilih;
 
                         // tiketing = 0;
@@ -88,9 +112,14 @@ int main()
                     cin >> konfirmasi;
                     if (konfirmasi != "YA" || konfirmasi == "ya")
                     {
+                        menuUtama = 3;
+                        ulang = 3;
+                        pilih = 0;
                     }
                     else
                     {
+                        pilih = 0;
+                        ulang = 3;
                     }
                     break;
                 }
@@ -103,16 +132,15 @@ int main()
             cin >> konfirmasi;
             if (konfirmasi == "YA" || konfirmasi == "ya")
             {
-                ulang = 3;
+                menuUtama = 0;
             }
             else
             {
-                cout << "Terima kasih Sudah mengunjungi AWC Theater";
                 pilih = 0;
                 ulang = 3;
             }
         }
     }
-
+    cout << "terima kasih sudah mengunjungi AWC Theater";
     return 0;
 }
