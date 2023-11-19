@@ -439,7 +439,7 @@ int main()
                                 {
                                     cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << mainMenu << endl;
                                     cout << "anda di beri kesempatan sebanyak 3 kali";
-                                    pin_transaction++;
+                                    mainMenu++;
                                     if (pin_transaction == 2)
                                     {
                                         cout << "ini kesempatan Terakhir";
@@ -458,12 +458,36 @@ int main()
 
                         case 2:
                             // Rekening Lain
-                            cout << "masukan Nomor Rekening yang anda Tuju";
+                            cout << "masukan Nomor Rekening yang anda Tuju :";
                             cin >> inputNoRek;
                             if (inputNoRek == defaultNoRekA || inputNoRek == defaultNoRekB)
                             {
-
-                                cout << "lanjut program";
+                                // konfirmasi Transaksi
+                                mainMenu = 0;
+                                while (mainMenu < 3)
+                                {
+                                    cout << "masukan Pin anda :";
+                                    cin >> pin_transaction;
+                                    if (pin_transaction == input_pin)
+                                    {
+                                        cout << "Lanjut BORRR\n";
+                                    }
+                                    else
+                                    {
+                                        mainMenu++;
+                                        cout << "Anda sudah memasukan PIN yang salah sebanyak "<< mainMenu << endl;
+                                        cout << "mohon masukan PIN dengan benar, Anda hanya di beri kesempatan 3 kali!!" << endl;
+                                        if(mainMenu == 2){
+                                            cout << "Ini adalah kesempatan yang terakhir" << endl;
+                                        }
+                                        if(mainMenu == 3){
+                                            cout << "Maaf kartu anda terblokir, Mohon hubungi CS kami"<< endl;
+                                            menuUtama = 1;
+                                            ulang = 3;
+                                            pilih = 0;
+                                        }
+                                    }
+                                }
                             }
                             else
                             {
