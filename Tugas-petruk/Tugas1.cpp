@@ -6,7 +6,7 @@ int main()
     // inisialiasai dan deklasrasi variable
     int pilih, defaultNoRekA = 222222, defaultNoRekB = 333333, nomor_kartu = 123456,
                password = 10, input_pin = 0, input_rek = 0;
-    int inputNoRek = 0, saldo = 100000, mainMenu = 0;
+    int inputNoRek = 0, saldo = 1000000, mainMenu = 0;
     int withDraw, inpoSaldo, pilihRekening;
     int konfirmasi, pin_transaction;
     int pecahan100 = 100000, pecahan50 = 50000;
@@ -203,10 +203,9 @@ int main()
                                         cout << "Apakah anda ingin melakukan Transaksi Lain\n (Klik 1 Jika YA dan 0 Jika Tidak)";
                                         cin >> konfirmasi;
                                         if (konfirmasi != 0)
-                                        {   
+                                        {
                                             withDraw = 3;
-                                            menuUtama = 0; 
-                                            
+                                            menuUtama = 0;
                                         }
                                         else
                                         {
@@ -253,7 +252,7 @@ int main()
                         }
                         break;
                     case 2:
-                        cout << "Masukan Nominal Yang ingin di ambil";
+                        cout << "Masukan Nominal Yang ingin di ambil : ";
                         cin >> nominal;
 
                         if (saldo >= nominal)
@@ -262,7 +261,7 @@ int main()
                             withDraw = 0;
                             while (withDraw < 3)
                             {
-                                cout << "Masukan PIN transaksi anda ";
+                                cout << "Masukan PIN transaksi anda : ";
                                 cin >> pin_transaction;
                                 if (pin_transaction == input_pin)
                                 {
@@ -276,6 +275,7 @@ int main()
                                         if (pilih != 0)
                                         {
                                             withDraw = 3;
+                                            ulang = 3;
                                         }
                                         else
                                         {
@@ -287,15 +287,17 @@ int main()
                                     else
                                     {
                                         cout << "Maaf Nominal yang anda masukan kurang dari 50RB atau tidak sama dengan kelipatan 50RB\n";
-                                        cout << "apakah Anda ingin melakukan transaksi yang lain\n";
+                                        cout << "apakah Anda ingin melakukan transaksi yang lain\n (Klik 1 Jika Ya dan 0 Jika tidak)";
                                         cin >> konfirmasi;
                                         if (konfirmasi != 0)
                                         {
-                                            pilih = 0;
-                                            ulang = 3;
+                                            withDraw = 3;
+                                            menuUtama = 0;
                                         }
                                         else
                                         {
+                                            menuUtama = 3;
+                                            pilih = 0;
                                             ulang = 3;
                                         }
                                     }
@@ -398,11 +400,11 @@ int main()
                     if (nominal % pecahan100 == 0 || nominal % pecahan50 == 0)
                     {
                         cout << "jumlah Uang yang anda setorkan " << nominal << endl;
-                        cout << "setor ke Rekening : ";
+                        cout << "setor ke Rekening : " << endl;
+                        cout << "1.Rekening anda\n";
+                        cout << "2.Rekening Lain\n";
+                        cout << "0.klik angka berapa pun untuk membatalkan Transaksi\n";
                         cin >> pilihRekening;
-                        cout << "Rekening anda";
-                        cout << "Rekening Lain";
-                        cout << "klik angka berapa pun untuk membatalkan Transaksi";
                         menuUtama = 0;
                         switch (pilihRekening)
                         {
@@ -416,13 +418,28 @@ int main()
                                 cin >> pin_transaction;
                                 if (pin_transaction == input_pin)
                                 {
-                                    cout << "bagus lanjutkan";
+                                    saldo = saldo + nominal;
+                                    cout << "Transaksi BERHASIL";
+                                    cout << "Saldo yang ada di rekening anda sekarang " << saldo << endl;
+                                    cout << "apakah anda ingin melakukan transaksi Lagi\n (KLik 1 Jika YA dan 0 jika Tidak)";
+                                    cin >> konfirmasi;
+                                    if (konfirmasi != 0)
+                                    {
+                                        mainMenu = 3;
+                                        ulang = 3;
+                                    }
+                                    else
+                                    {
+                                        mainMenu = 3;
+                                        ulang = 3;
+                                        menuUtama = 1;
+                                    }
                                 }
                                 else
                                 {
                                     cout << "Maaf anda sudah memasukan PIN yang salah sebanyak " << mainMenu << endl;
                                     cout << "anda di beri kesempatan sebanyak 3 kali";
-                                    pin_transaction++;
+                                    mainMenu++;
                                     if (pin_transaction == 2)
                                     {
                                         cout << "ini kesempatan Terakhir";
@@ -440,6 +457,72 @@ int main()
                             break;
 
                         case 2:
+                            // Rekening Lain
+                            cout << "masukan Nomor Rekening yang anda Tuju : ";
+                            cin >> inputNoRek;
+                            if (inputNoRek == defaultNoRekA || inputNoRek == defaultNoRekB)
+                            {
+                                // konfirmasi Transaksi
+                                mainMenu = 0;
+                                while (mainMenu < 3)
+                                {
+                                    cout << "masukan Pin anda :";
+                                    cin >> pin_transaction;
+                                    if (pin_transaction == input_pin)
+                                    {
+                                        cout << "Jumlah Uang yang anda setorkan adalah " << nominal << endl;
+                                        cout << "No Rekening yang anda Tuju adalah " << inputNoRek << endl;
+                                        cout << "Apakah yang Anda inputkan Sudah benar \n (Klik 1 Jika Benar dan 0 Jika tidak)";
+                                        cin >> konfirmasi;
+                                        if (konfirmasi != 0)
+                                        {
+                                            cout << "LANJUT\n";
+                                            mainMenu = 3;
+                                            ulang = 3;
+                                            menuUtama = 1;
+                                        }
+                                        else
+                                        {
+                                            pilih = 0;
+                                            ulang = 3;
+                                            mainMenu = 3;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        mainMenu++;
+                                        cout << "Anda sudah memasukan PIN yang salah sebanyak " << mainMenu << endl;
+                                        cout << "mohon masukan PIN dengan benar, Anda hanya di beri kesempatan 3 kali!!" << endl;
+                                        if (mainMenu == 2)
+                                        {
+                                            cout << "Ini adalah kesempatan yang terakhir" << endl;
+                                        }
+                                        if (mainMenu == 3)
+                                        {
+                                            cout << "Maaf kartu anda terblokir, Mohon hubungi CS kami" << endl;
+                                            menuUtama = 1;
+                                            ulang = 3;
+                                            pilih = 0;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                cout << "rekening yang anda masukan tidak dapat di temukan\n";
+                                cout << "apakah anda ingin melakukan transaksi yang lain \n (KLik 1 Jika YA dan 0 Jika Tidak)";
+                                cin >> konfirmasi;
+                                if (konfirmasi != 0)
+                                {
+                                    menuUtama = 3;
+                                    ulang = 3;
+                                }
+                                else
+                                {
+                                    mainMenu = 3;
+                                    menuUtama = 1;
+                                }
+                            }
                             break;
                         default:
                             pilih = 0;
@@ -463,6 +546,8 @@ int main()
                         }
                     }
                     break;
+
+                    // bagian Setor Tunai
                 case 0:
                     ulang = 3;
                     break;
