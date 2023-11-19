@@ -3,14 +3,14 @@ using namespace std;
 
 int main()
 {
+    int pilih, nominal;
     string default_account = "bujed@theater.com", login;
-    int default_pin = 123456;
+    string konfirmasi;
+    int default_pin = 123456, pin;
     int poin = 1000000, jumlahTiket, TopUP = 100000;
     // int tiketing = 0;
     int menuUtama;
-    int pilih, pin, nominal;
     int ulang = 0;
-    string konfirmasi;
 
     cout << "AWC Theater " << endl;
     cout << pilih << endl;
@@ -55,11 +55,26 @@ int main()
                     // Menu Check Poin
                 case 2:
                     // menu top up
-                    cout << "Masukan jumlah Poin yang ingin anda top Up : ";
+                    cout << "Masukan jumlah Poin yang ingin anda top Up (1p = 1Rp)\n";
+                    cout << "Minimal TopUP 100RB => ";
                     cin >> nominal;
-                    if (TopUP < nominal)
+                    if (TopUP <= nominal)
                     {
-                        cout << "Lanjut Boss \n";
+                        cout << "Jumlah Poin yang anda TopUp adalah " << nominal << endl;
+                        poin = poin + nominal;
+                        cout << "Jumlah Poin anda sekarang Menjadi " << poin << endl;
+                        cout << "Apakah anda ingin kembali ke menu utama (Ketik Ya dan Tidak)";
+                        cin >> konfirmasi;
+                        if (konfirmasi == "YA" || konfirmasi == "ya")
+                        {
+                            menuUtama = 3;
+                            ulang = 3;
+                        }
+                        else
+                        {
+                            pilih = 0;
+                            ulang = 3;
+                        }
                     }
                     else
                     {
@@ -96,6 +111,8 @@ int main()
                         case 1:
                             cout << "berapa tiket yang ingin anda ambil";
                             cin >> jumlahTiket;
+
+                            
                             break;
 
                         default:
@@ -128,7 +145,7 @@ int main()
         else
         {
             cout << "Akun atau Password yang anda masukan salah atau tidak dapat di temukan, mohon masukan dengan benar\n";
-            cout << "apakah anda masih ingin menginputkan Akun atau password dengan Benar\n (Ketik YA atau Tidak)";
+            cout << "apakah anda masih ingin menginputkan Akun atau password dengan Benar\n (Ketik YA atau Tidak)" << endl;
             cin >> konfirmasi;
             if (konfirmasi == "YA" || konfirmasi == "ya")
             {
