@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int pilih, nominal;
-    string default_account = "bujed@theater.com", login;
+    string default_account = "login", login;
     string konfirmasi;
     int default_pin = 123456, pin;
     int poin = 1000000, jumlahTiket, TopUP = 100000;
@@ -31,7 +31,6 @@ int main()
                 cout << "2. Top UP POIN\n";
                 cout << "3. Pembelian tiket\n";
                 cin >> pilih;
-
                 menuUtama = 0;
                 switch (pilih)
                 {
@@ -43,7 +42,6 @@ int main()
                     cin >> konfirmasi;
                     if (konfirmasi == "YA" || konfirmasi == "ya")
                     {
-                        menuUtama = 3;
                         ulang = 3;
                     }
                     else
@@ -67,7 +65,6 @@ int main()
                         cin >> konfirmasi;
                         if (konfirmasi == "YA" || konfirmasi == "ya")
                         {
-                            menuUtama = 3;
                             ulang = 3;
                         }
                         else
@@ -84,7 +81,6 @@ int main()
                         if (konfirmasi == "YA" || konfirmasi == "ya")
                         {
                             ulang = 3;
-                            menuUtama = 3;
                         }
                         else
                         {
@@ -96,13 +92,13 @@ int main()
                     // menu TopUP
                 case 3:
                     // pemilihan Film
-                    while (pilih != 0)
+                    while (menuUtama != 0)
                     {
-                        cout << "Silakan memilih Film yang anda mau";
-                        cout << "1. The Hunger Games The ballad of songbirds & snakes";
-                        cout << "2. The Marvels";
-                        cout << "3. The animal Kingdom";
-                        cout << "0. kembali";
+                        cout << "Silakan memilih Acara Theater yang akan berlangsung" << endl;
+                        cout << "1. The Hunger Games The ballad of songbirds & snakes (20RB)" << endl;
+                        cout << "2. The Marvels (20RB)" << endl;
+                        cout << "3. The animal Kingdom(20RB)" << endl;
+                        cout << "0. kembali\n ";
                         cin >> pilih;
 
                         // tiketing = 0;
@@ -112,13 +108,19 @@ int main()
                             cout << "berapa tiket yang ingin anda ambil";
                             cin >> jumlahTiket;
 
-                            
+                            break;
+                        case 2:
+                            break;
+                        case 3:
                             break;
 
+                        case 0:
+                            ulang = 3;
+                            menuUtama = 3;
+                            pilih = 0;
+                            break;
                         default:
                             ulang = 3;
-                            pilih = 0;
-                            cout << "terima kasih sudah mengunjungi AWC Theater";
                             break;
                         }
                     }
@@ -129,9 +131,8 @@ int main()
                     cin >> konfirmasi;
                     if (konfirmasi != "YA" || konfirmasi == "ya")
                     {
-                        menuUtama = 3;
                         ulang = 3;
-                        pilih = 0;
+                        pilih = 1;
                     }
                     else
                     {
@@ -149,7 +150,6 @@ int main()
             cin >> konfirmasi;
             if (konfirmasi == "YA" || konfirmasi == "ya")
             {
-                menuUtama = 0;
             }
             else
             {
