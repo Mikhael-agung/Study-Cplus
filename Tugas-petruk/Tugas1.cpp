@@ -574,4 +574,4 @@ int main()
     }
     cout << "program Berhenti";
     return 0;
-}
+}   

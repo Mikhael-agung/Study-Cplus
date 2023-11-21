@@ -4,11 +4,14 @@ using namespace std;
 int main()
 {
     int pilih, nominal;
-    string default_account = "bujed@theater.com", login;
+    string default_account = "admin", login;
     string konfirmasi;
-    int default_pin = 123456, pin;
+    string default_pin = "admin", pin;
     int poin = 1000000, jumlahTiket, TopUP = 100000;
     // int tiketing = 0;
+    int tiket1 = 200000;
+    // int ;
+    // int ;
     int menuUtama;
     int ulang = 0;
 
@@ -31,8 +34,7 @@ int main()
                 cout << "2. Top UP POIN\n";
                 cout << "3. Pembelian tiket\n";
                 cin >> pilih;
-
-                menuUtama = 0;
+                menuUtama = 1;
                 switch (pilih)
                 {
                 case 1:
@@ -43,7 +45,6 @@ int main()
                     cin >> konfirmasi;
                     if (konfirmasi == "YA" || konfirmasi == "ya")
                     {
-                        menuUtama = 3;
                         ulang = 3;
                     }
                     else
@@ -67,7 +68,6 @@ int main()
                         cin >> konfirmasi;
                         if (konfirmasi == "YA" || konfirmasi == "ya")
                         {
-                            menuUtama = 3;
                             ulang = 3;
                         }
                         else
@@ -84,7 +84,6 @@ int main()
                         if (konfirmasi == "YA" || konfirmasi == "ya")
                         {
                             ulang = 3;
-                            menuUtama = 3;
                         }
                         else
                         {
@@ -96,29 +95,75 @@ int main()
                     // menu TopUP
                 case 3:
                     // pemilihan Film
-                    while (pilih != 0)
+                    while (menuUtama != 0)
                     {
-                        cout << "Silakan memilih Film yang anda mau";
-                        cout << "1. The Hunger Games The ballad of songbirds & snakes";
-                        cout << "2. The Marvels";
-                        cout << "3. The animal Kingdom";
-                        cout << "0. kembali";
+                        cout << endl;
+                        cout << "|============================================================|\n";
+                        cout << "|                            Pengumuman                      |\n";
+                        cout << "|     Pemesanan Tiket Hanya dapat di lakukan 1 kali PerAkun  |\n";
+                        cout << "|       di setiap acara Show theater yang akan berlangsung   |\n";
+                        cout << "|============================================================|\n";
+                        cout << "|============================================================|\n";
+                        cout << "|                  Nama Acara                 |     waktu    |\n";
+                        cout << "|1. Ramune No Nomikata (cara meminum Ramune)  | Kamis 19.00  |\n";
+                        cout << "|2. Tunas Di Balik Seragam                    | Jumat 19.00  |\n";
+                        cout << "|3. Gadis Gadis Remaja                        | Sabtu 19.00  |\n";
+                        cout << "|0. kembali                                                  |\n";
                         cin >> pilih;
-
-                        // tiketing = 0;
                         switch (pilih)
                         {
                         case 1:
-                            cout << "berapa tiket yang ingin anda ambil";
+                            cout << "berapa tiket yang ingin anda ambil : ";
                             cin >> jumlahTiket;
 
-                            
+                            if (jumlahTiket == 1)
+                            {
+                                cout << "Harga tiket untuk acara Show Ramune No Nomikata adalah 200RB Poin\n";
+                                cout << "Apakah yang ada pilih sudah benar\n (Klik Y JIka YA dan N Jika tidak)" << endl;
+                                cin >> konfirmasi;
+                                if (konfirmasi == "Y" || konfirmasi == "y")
+                                {
+                                    poin = poin - tiket1;
+                                    cout << "transaksi Berhasil";
+                                    ulang = 3;
+                                    menuUtama = 1;
+                                }
+                                else
+                                {
+                                    ulang = 3;
+                                    pilih = 0;
+                                    menuUtama = 1;
+                                }
+                            }
+                            else
+                            {
+                                cout << "maaf Jumlah tiket yang dapat di pesan hanya 1 tiket per Akun\n";
+                                ulang = 3;
+                                pilih = 0;
+                                menuUtama = 1;
+                            }
+                            break;
+                        case 2:
+                            cout << "Masukan Jumlah tiket yang ingin anda : ";
+                            cin >> jumlahTiket;
+
+                            if (jumlahTiket == 1)
+                            {
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 3:
                             break;
 
+                        case 0:
+                            menuUtama = 0;
+                            pilih = 1;
+                            break;
                         default:
-                            ulang = 3;
                             pilih = 0;
-                            cout << "terima kasih sudah mengunjungi AWC Theater";
+                            ulang = 3;
                             break;
                         }
                     }
@@ -127,11 +172,10 @@ int main()
                     cout << "maaf Pilihan  Yang anda masukan tidak ada";
                     cout << "apakah anda ingin kembali ke menu Utama\n (ketik YA Atau Tidak)";
                     cin >> konfirmasi;
-                    if (konfirmasi != "YA" || konfirmasi == "ya")
+                    if (konfirmasi == "YA" || konfirmasi == "ya")
                     {
-                        menuUtama = 3;
                         ulang = 3;
-                        pilih = 0;
+                        pilih = 1;
                     }
                     else
                     {
@@ -149,7 +193,6 @@ int main()
             cin >> konfirmasi;
             if (konfirmasi == "YA" || konfirmasi == "ya")
             {
-                menuUtama = 0;
             }
             else
             {
