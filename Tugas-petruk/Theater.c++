@@ -208,7 +208,7 @@ int main()
                     }
                     break;
                 default:
-                    cout << "maaf Pilihan  Yang anda masukan tidak ada";
+                    cout << "maaf Pilihan  Yang anda masukan tidak ada\n";
                     cout << "apakah anda ingin kembali ke menu Utama\n (ketik YA Atau Tidak)";
                     cin >> konfirmasi;
                     if (konfirmasi == "YA" || konfirmasi == "ya")
