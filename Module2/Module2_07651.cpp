@@ -12,7 +12,7 @@ void arimatika_07651()
     cin >> loops_07651;
 
     cout << "Baris aritmatika: ";
-    for (int i = 1; i <= loops_07651; i++)
+    for (int i = 1; i < loops_07651; i++)
     {
         if (i % 3 == 1)
         {
