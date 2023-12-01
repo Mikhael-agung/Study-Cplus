@@ -2,7 +2,7 @@
 #include <string>
 #include <stdlib.h>
 using namespace std;
-
+// * saol no 5
 int main(){
     string angka;
     int hasil;
