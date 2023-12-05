@@ -107,7 +107,8 @@
     "streambuf": "cpp",
     "thread": "cpp",
     "typeinfo": "cpp",
-    "testing": "cpp"
+    "testing": "cpp",
+    "fstream": "cpp"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"

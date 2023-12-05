@@ -12,9 +12,9 @@ int main() {
     cout << "Masukkan pengganti huruf vokal : ";
     cin >> pengganti;
 
-    for (size_t i = 0; i < kalimat.length(); i++) {
+    for (int i = 0; i < kalimat.length(); i++) {
         char huruf = toupper(kalimat[i]);
-        if (huruf == 'a' || huruf == 'i' || huruf == 'u' || huruf == 'e' || huruf == 'o') {
+        if (huruf == 'A' || huruf == 'I' || huruf == 'U' || huruf == 'E' || huruf == 'O') {
             kalimat[i] = pengganti;
             jumlahVokal++;
         }
