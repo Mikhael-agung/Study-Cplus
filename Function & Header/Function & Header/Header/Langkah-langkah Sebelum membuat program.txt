@@ -1,0 +1,9 @@
+1. Buat Folder Terlebih Dahulu
+2. Membuat 2 file yaitu main.cpp dan header.h
+	-> main.cpp untuk running program
+	-> header.h untuk semua proses yang ada pada program seperti input
+	   jumlahMahasiswa & DataMahasiswa
+
+Noted : 
+Usahakan file cpp dan header 1 Folder. Jika tidak 1 Folder sampai kiamat tidak
+bisa di running:))
