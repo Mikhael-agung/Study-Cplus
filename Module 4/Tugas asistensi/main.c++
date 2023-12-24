@@ -32,16 +32,33 @@ int main()
         switch (pilih)
         {
         case 1:
-            cout << "Kalimat yang Anda masukkan: " << kalimat << endl;
-            cout << "Kembali ke menu utama: ";
-            cin >> konfirmasi;
-            if (konfirmasi == 'Y' || konfirmasi == 'y')
+            if (kalimat == "")
             {
-                pilih = 0;
+                cout << "maaf anda belum menuliskan kata apapun ";
+                cout << "kembali ke menu Utama : ";
+                cin >> konfirmasi;
+                if (konfirmasi == 'y' || konfirmasi == 'Y')
+                {
+                    pilih = 0;
+                }
+                else
+                {
+                    pilih = 9;
+                }
             }
             else
             {
-                pilih = 9;
+                cout << "Kalimat yang Anda masukkan: " << kalimat << endl;
+                cout << "Kembali ke menu utama: ";
+                cin >> konfirmasi;
+                if (konfirmasi == 'Y' || konfirmasi == 'y')
+                {
+                    pilih = 0;
+                }
+                else
+                {
+                    pilih = 9;
+                }
             }
             break;
 
@@ -59,13 +76,58 @@ int main()
                 pilih = 9;
             }
             break;
-
-        
+        case 3:
+            updateSentenceByValue(kalimat);
+            cout << "kalimat awal: " << kalimat << endl;
+            cout << "kalimat Setelah melakukan pemanggilan fungsi (call by Value): " << kalimat << endl;
+            cout << "kembali ke menu Utama? : ";
+            cin >> konfirmasi;
+            if (konfirmasi == 'Y' || konfirmasi == 'y')
+            {
+                pilih = 0;
+            }
+            else
+            {
+                pilih = 9;
+            }
+            break;
+        case 4:
+            cout << "Kalimat awal : " << kalimat << endl;
+            updateSentence(kalimat);
+            cout << "kalimat Setelah melakukan pemanggilan fungsi (call by refrence) : " << kalimat << endl;
+            cout << "kembali ke menu Utama? : ";
+            cin >> konfirmasi;
+            if (konfirmasi == 'Y' || konfirmasi == 'y')
+            {
+                pilih = 0;
+            }
+            else
+            {
+                pilih = 9;
+            }
+            break;
+        case 5:
+            deleteSentence();
+            cout << endl;
+            cout << "kembali ke menu utama? (Y/N): ";
+            cin >> konfirmasi;
+            if (konfirmasi == 'y' || konfirmasi == 'Y')
+            {
+                pilih = 0;
+            }
+            if (konfirmasi == 'n' || konfirmasi == 'N')
+            {
+                pilih = 9;
+            }
+            break;
+        case 6: 
+            
+            break;
         default:
             pilih = 9;
             break;
         }
     } while (pilih != 9);
-    cout << "Terima kasih sudah berkunjung!";
+    cout << "THX BROO";
     return 0;
 }
