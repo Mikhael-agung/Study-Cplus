@@ -39,3 +39,17 @@ int mSearchMember(string inpNoTelp)
     }    
     return -1;
 }
+
+void mUpdatePassword(string inpTelp, string inpPass){
+    int index = mSearchMember(inpTelp);
+    if(index != -1){
+        password[index] = inpPass;
+        cout << "Password Berhasil di Perbarui";
+    } else {
+        cout << "No.Telp tidak dapat di temukan";
+    }
+}
+
+void mDeletedMember(){
+    
+}

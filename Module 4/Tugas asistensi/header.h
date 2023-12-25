@@ -1,11 +1,13 @@
 // File header.h
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 string kalimat, kalimatLama;
+
 
 
 // fungsi Membuat kalimat baru 
@@ -34,10 +36,45 @@ void deleteSentence(){
     cout << "kalimat sudah di hapus";
 }
 
-string sentenceAscending (string ){
-    sort(sentence.begin(), sentence.end());
+string sentenceAscending (string sentence){
+    stringstream ss(sentence);
+    string word;
+    vector<string> words;
+    while (ss >> word){
+        words.push_back(word);
+    }
+
+    sort(words.begin(), words.end()); //* perubahan hanya di sini untuk Descending menjadi rbegin dan rend
+    string sorted_sentence;
+    for(const string& word : words){
+        sorted_sentence += word + " ";
+    }
+    return sorted_sentence;
 }
 
-void sentenceDescending(){
-    sort(sentence)
+string sentenceDescending (string sentence){
+    stringstream ss(sentence);
+    string word;
+    vector<string> words;
+    while(ss >> word){
+        words.push_back(word);
+    }
+
+    sort(words.rbegin(), words.rend());
+    string sorted_sentence;
+    for(const string& word : words){
+        sorted_sentence += word + " ";
+    }
+    return sorted_sentence;
 }
+
+void showVokalSentences(string& sentence, char vowel){
+    for(char& c : sentence){
+        char lowerC = tolower(c);
+        if(lowerC == 'a' || lowerC == 'i' || lowerC == 'u' || lowerC == 'e' || lowerC == 'o'){
+        c = vowel;
+        }
+    }
+}
+
+
