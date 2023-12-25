@@ -7,7 +7,7 @@ int main()
     string default_account = "admin", login;
     string konfirmasi;
     string default_pin = "admin", pin;
-    int poin = 1000000, jumlahTiket, TopUP = 100000;
+    int poin = 1000000, TopUP = 100000;
     // int tiketing = 0;
     int tiket1 = 200000;
     // int ;
@@ -98,65 +98,104 @@ int main()
                     while (menuUtama != 0)
                     {
                         cout << endl;
-                        cout << "|============================================================|\n";
-                        cout << "|                            Pengumuman                      |\n";
-                        cout << "|     Pemesanan Tiket Hanya dapat di lakukan 1 kali PerAkun  |\n";
-                        cout << "|       di setiap acara Show theater yang akan berlangsung   |\n";
-                        cout << "|============================================================|\n";
-                        cout << "|============================================================|\n";
-                        cout << "|                  Nama Acara                 |     waktu    |\n";
-                        cout << "|1. Ramune No Nomikata (cara meminum Ramune)  | Kamis 19.00  |\n";
-                        cout << "|2. Tunas Di Balik Seragam                    | Jumat 19.00  |\n";
-                        cout << "|3. Gadis Gadis Remaja                        | Sabtu 19.00  |\n";
-                        cout << "|0. kembali                                                  |\n";
+                        cout << "|===============================================================================|\n";
+                        cout << "|                                       Pengumuman                              |\n";
+                        cout << "|                 Pemesanan Tiket Hanya dapat di lakukan 1 kali PerAkun         |\n";
+                        cout << "|                  di setiap acara Show theater yang akan berlangsung           |\n";
+                        cout << "|===============================================================================|\n";
+                        cout << "|===============================================================================|\n";
+                        cout << "|                  Nama Acara                 |               waktu             |\n";
+                        cout << "|1. Ramune No Nomikata (cara meminum Ramune)  | Kamis 25 November | Jam 19.00   |\n";
+                        cout << "|2. Tunas Di Balik Seragam                    | Jumat 26 November | Jam 19.00   |\n";
+                        cout << "|3. Gadis Gadis Remaja                        | Sabtu 27 November | Jam 19.00   |\n";
+                        cout << "|0. kembali                                                                     |\n";
                         cin >> pilih;
                         switch (pilih)
                         {
                         case 1:
-                            cout << "berapa tiket yang ingin anda ambil : ";
-                            cin >> jumlahTiket;
-
-                            if (jumlahTiket == 1)
+                            cout << "|==========================================|\n";
+                            cout << "|           Detail pembelian Tiket         |\n";
+                            cout << "|------------------------------------------|\n";
+                            cout << "| Hari/Tanggal : Sabtu 27 November 2023    |\n";
+                            cout << "| Waktu Tukar Tiket : 18.00 - 19.00        |\n";
+                            cout << "| Nama Show : Cara Meminum Ramune          |\n";
+                            cout << "| Jam Mulai Show : 19.00                   |\n";
+                            cout << "| Metode Pembayaran : AWS Point            |\n";
+                            cout << "| Jumlah Yang harus di Bayar : 200RB Poin  |\n";
+                            cout << "|==========================================|\n";
+                            cout << "Apakah yang anda Pilih sudah benar \n (Klik Y Jika YA dan N jika tidak)";
+                            cin >> konfirmasi;
+                            if (konfirmasi == "Y" || konfirmasi == "y")
                             {
-                                cout << "Harga tiket untuk acara Show Ramune No Nomikata adalah 200RB Poin\n";
-                                cout << "Apakah yang ada pilih sudah benar\n (Klik Y JIka YA dan N Jika tidak)" << endl;
-                                cin >> konfirmasi;
-                                if (konfirmasi == "Y" || konfirmasi == "y")
-                                {
-                                    poin = poin - tiket1;
-                                    cout << "transaksi Berhasil";
-                                    ulang = 3;
-                                    menuUtama = 1;
-                                }
-                                else
-                                {
-                                    ulang = 3;
-                                    pilih = 0;
-                                    menuUtama = 1;
-                                }
+                                poin = poin - tiket1;
+                                cout << "Transaksi Berhasil\n";
+                                cout << "Sisa Poin Anda sekarang " << poin << endl;
+                                ulang = 3;
+                                menuUtama = 1;
                             }
                             else
                             {
-                                cout << "maaf Jumlah tiket yang dapat di pesan hanya 1 tiket per Akun\n";
                                 ulang = 3;
                                 pilih = 0;
                                 menuUtama = 1;
                             }
                             break;
                         case 2:
-                            cout << "Masukan Jumlah tiket yang ingin anda : ";
-                            cin >> jumlahTiket;
-
-                            if (jumlahTiket == 1)
+                            cout << "|==========================================|\n";
+                            cout << "|           Detail pembelian Tiket         |\n";
+                            cout << "|------------------------------------------|\n";
+                            cout << "| Hari/Tanggal : Sabtu 27 November 2023    |\n";
+                            cout << "| Waktu Tukar Tiket : 18.00 - 19.00        |\n";
+                            cout << "| Nama Show : Tunas Di balik Seragam       |\n";
+                            cout << "| Jam Mulai Show : 19.00                   |\n";
+                            cout << "| Metode Pembayaran : AWS Point            |\n";
+                            cout << "| Jumlah Yang harus di Bayar : 200RB Poin  |\n";
+                            cout << "|==========================================|\n";
+                            cout << "Apakah yang anda Pilih sudah benar \n (Klik Y Jika YA dan N jika tidak)";
+                            cin >> konfirmasi;
+                            if (konfirmasi == "Y" || konfirmasi == "y")
                             {
+                                poin = poin - tiket1;
+                                cout << "Transaksi Berhasil\n";
+                                cout << "Sisa Poin Anda sekarang " << poin << endl;
+                                ulang = 3;
+                                menuUtama = 1;
                             }
                             else
                             {
+                                ulang = 3;
+                                pilih = 0;
+                                menuUtama = 1;
                             }
                             break;
                         case 3:
+                            cout << "|==========================================|\n";
+                            cout << "|           Detail pembelian Tiket         |\n";
+                            cout << "|------------------------------------------|\n";
+                            cout << "| Hari/Tanggal : Sabtu 27 November 2023    |\n";
+                            cout << "| Waktu Tukar Tiket : 18.00 - 19.00        |\n";
+                            cout << "| Nama Show : Gadis Gadis Remaja           |\n";
+                            cout << "| Jam Mulai Show : 19.00                   |\n";
+                            cout << "| Metode Pembayaran : AWS Point            |\n";
+                            cout << "| Jumlah Yang harus di Bayar : 200RB Poin  |\n";
+                            cout << "|==========================================|\n";
+                            cout << "Apakah yang anda Pilih sudah benar \n (Klik Y Jika YA dan N jika tidak)";
+                            cin >> konfirmasi;
+                            if (konfirmasi == "Y" || konfirmasi == "y")
+                            {
+                                poin = poin - tiket1;
+                                cout << "Transaksi Berhasil \n";
+                                cout << "Sisa Poin Anda sekarang" << poin << endl;
+                                ulang = 3;
+                                menuUtama = 1;
+                            }
+                            else
+                            {
+                                ulang = 3;
+                                pilih = 0;
+                                menuUtama = 1;
+                            }
                             break;
-
                         case 0:
                             menuUtama = 0;
                             pilih = 1;
@@ -169,7 +208,7 @@ int main()
                     }
                     break;
                 default:
-                    cout << "maaf Pilihan  Yang anda masukan tidak ada";
+                    cout << "maaf Pilihan  Yang anda masukan tidak ada\n";
                     cout << "apakah anda ingin kembali ke menu Utama\n (ketik YA Atau Tidak)";
                     cin >> konfirmasi;
                     if (konfirmasi == "YA" || konfirmasi == "ya")
