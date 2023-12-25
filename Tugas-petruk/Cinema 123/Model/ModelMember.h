@@ -13,7 +13,7 @@ void mAddMember(string inpNama, string inpNoTelp, string inpEmail, string inpPas
     nMember++;
 }
 
-void nViewMember()
+void mViewMember()
 {
     cout << "Data Member" << endl;
     cout << "Jumlah Member: " << nMember << endl;
@@ -50,6 +50,9 @@ void mUpdatePassword(string inpTelp, string inpPass){
     }
 }
 
-void mDeletedMember(){
-    
-}
+// void mDeletedMember(string delTelp, string delEmail){
+//     int index = mSearchMember(delTelp);
+//     // if(){
+
+//     // }
+// }
