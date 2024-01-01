@@ -46,7 +46,8 @@ void mUpdatePassword(string inpTelp, string inpPass){
         password[index] = inpPass;
         cout << "Password Berhasil di Perbarui";
     } else {
-        cout << "No.Telp tidak dapat di temukan";
+        cout << "#No.Telp tidak dapat di temukan#\n";
+        cout << "#Password gagal di rubah#\n";
     }
 }
 
@@ -56,3 +57,13 @@ void mUpdatePassword(string inpTelp, string inpPass){
 
 //     // }
 // }
+
+int mUserLogin(string inpEmail, string inpPassword){
+    for(int i = 0; i < nMember; i++){
+        if(email[i] == inpEmail && password[i] == inpPassword){
+        return i;
+        }
+    }
+    return -1;
+}
+ 

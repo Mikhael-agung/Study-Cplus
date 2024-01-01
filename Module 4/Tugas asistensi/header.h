@@ -6,22 +6,21 @@
 #include <algorithm>
 
 using namespace std;
-string kalimat, kalimatLama;
+string kalimat, kalimatLama, kalimatAwal;
 
-void confirm(char konfirmasi)
+void confirm(int &pilih)
 {
-    int pilih;
-    cout << "kembali ke menu Utama : ";
+    char konfirmasi;
+    cout << "Kembali Ke menu Utama? (Y/N): ";
     cin >> konfirmasi;
     if (konfirmasi == 'y' || konfirmasi == 'Y')
     {
         pilih = 0;
     }
-    
-    // if(konfirmasi == 'n' || konfirmasi == 'N')
-    // {
-    //     pilih = 9;
-    // }
+
+    if (konfirmasi == 'n' || konfirmasi == 'N'){
+        pilih = 9;
+    }
 }
 
 // fungsi Membuat kalimat baru
@@ -92,16 +91,13 @@ string sentenceDescending(string sentence)
     return sorted_sentence;
 }
 
-string showVokalSentences(string sentence, char vowel)
-{
-    string newSentence = sentence; // Membuat salinan dari kalimat
-    for (char &c : newSentence)
-    {
-        char lowerC = tolower(c);
-        if (lowerC == 'a' || lowerC == 'i' || lowerC == 'u' || lowerC == 'e' || lowerC == 'o')
-        {
-            c = vowel;
+void showVokalSentences(string sentence){
+    cout << "Huruf vokal dalam kalimat: ";
+    for(char c : sentence){
+        c = tolower(c);
+        if(c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o'){
+            cout << c << " ";
         }
     }
-    return newSentence; // Mengembalikan kalimat baru
+    cout << endl;
 }
