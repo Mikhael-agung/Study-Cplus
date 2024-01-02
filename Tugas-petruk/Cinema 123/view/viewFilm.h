@@ -8,6 +8,7 @@ void vAddFilm()
 {
     string inpNamaFilm, inpDurasiFilm, inpGenreFilm;
     cout << "Masukan nama Film : ";
+    cin.ignore();
     getline(cin, inpNamaFilm);
     cout << "Masukan durasi Film : ";
     getline(cin, inpDurasiFilm);

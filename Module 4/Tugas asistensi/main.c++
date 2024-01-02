@@ -10,6 +10,7 @@ int main()
     string kalimatAwal, kalimatBaru;
 
     cout << "Tugas Asistensi " << endl;
+    cout << pilih << endl;
     cout << "Masukkan sebuah kalimat: ";
     getline(cin, kalimat);
 

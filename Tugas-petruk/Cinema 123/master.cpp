@@ -25,6 +25,7 @@ void static_value()
     // testing static Jadwal Database
     mAddJadwal("10.00", "12-12-2024", "Studio 1", "Avenger: EndGame", 40000);
     mAddJadwal("10.00", "12-12-2024", "Studio 1", "SpiderMan: Far From Home", 40000);
+    
 }
 void confirm(int &pilih)
 {
@@ -38,7 +39,7 @@ void confirm(int &pilih)
 
     if (konfirmasi == 'n' || konfirmasi == 'N')
     {
-        pilih = 10;
+        pilih = 9;
     }
 }
 
@@ -53,10 +54,10 @@ void MenuAdmin()
         cout << "3. Cari Film\n";
         cout << "4. Tambah User\n";
         cout << "5. Lihat User\n";
-        cout << "5. Tambah Jadwal\n";
-        cout << "6. Lihat Jadwal\n";
-        cout << "7. Cari Jadwal\n";
-        cout << "8. Exit\n";
+        cout << "6. Tambah Jadwal\n";
+        cout << "7. Lihat Jadwal\n";
+        cout << "8. Cari Jadwal\n";
+        cout << "9. Exit\n";
         cout << "Masukan Pilihan : ";
         cin >> pilih;
         switch (pilih)
@@ -75,22 +76,22 @@ void MenuAdmin()
             break;
         case 5:
             vViewMembers();
-            break;
+            break;  
         default:
-            pilih = 0;
+            pilih = 9;
             break;
         }
 
-        if (pilih != 8 && pilih != 1)
-        {
+        if(pilih != 9){
             confirm(pilih);
         }
-    } while (pilih != 0);
-    cout << "THX";
+        
+    } while (pilih != 9);
+    cout << "THX\n";
 }
 
 void MenuUser()
-{
+{   
     int pilih;
     do
     {
@@ -100,10 +101,10 @@ void MenuUser()
         cout << "3. Cari Film\n";
         cout << "4. Tambah User\n";
         cout << "5. Lihat User\n";
-        cout << "5. Tambah Jadwal\n";
-        cout << "6. Lihat Jadwal\n";
-        cout << "7. Cari Jadwal\n";
-        cout << "8. Exit";
+        cout << "6. Tambah Jadwal\n";
+        cout << "7. Lihat Jadwal\n";
+        cout << "8. Cari Jadwal\n";
+        cout << "9. Exit\n";
         cout << "Masukan Pilihan : ";
         cin >> pilih;
         switch (pilih)
@@ -123,20 +124,13 @@ void MenuUser()
         case 5:
             vViewMembers();
             break;
-        case 8:
-            pilih = 0;
-            break;
+        case 9:
+            cout << "THX\n";
+            return;  // Keluar dari loop
         default:
-            pilih = 0;
             break;
         }
-
-        if (pilih != 8 && pilih != 1)
-        {
-            confirm(pilih);
-        }
-    } while (pilih != 8);
-    cout << "THX";
+    } while (true);
 }
 
 void LoginAuthentication()
@@ -167,11 +161,5 @@ int main()
 
     static_value();
     LoginAuthentication();
-    MenuAdmin();
-    // static_value();
-    // // testing jadwal
-    // vAddJadwal();
-    // vViewJadwal();
-    // vSearchJadwals();
     return 0;
 }
