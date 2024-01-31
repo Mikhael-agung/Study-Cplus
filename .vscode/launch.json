@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/agung/OneDrive/Documents/GitHub/Study-Cplus",
-      "program": "c:/Users/agung/OneDrive/Documents/GitHub/Study-Cplus/build/Debug/outDebug",
+      "cwd": "c:/Users/agung/Pictures/GitHub/Study-Cplus",
+      "program": "c:/Users/agung/Pictures/GitHub/Study-Cplus/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

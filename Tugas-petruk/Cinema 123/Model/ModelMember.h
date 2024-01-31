@@ -13,7 +13,7 @@ void mAddMember(string inpNama, string inpNoTelp, string inpEmail, string inpPas
     nMember++;
 }
 
-void nViewMember()
+void mViewMember()
 {
     cout << "Data Member" << endl;
     cout << "Jumlah Member: " << nMember << endl;
@@ -46,10 +46,24 @@ void mUpdatePassword(string inpTelp, string inpPass){
         password[index] = inpPass;
         cout << "Password Berhasil di Perbarui";
     } else {
-        cout << "No.Telp tidak dapat di temukan";
+        cout << "#No.Telp tidak dapat di temukan#\n";
+        cout << "#Password gagal di rubah#\n";
     }
 }
 
-void mDeletedMember(){
-    
+// void mDeletedMember(string delTelp, string delEmail){
+//     int index = mSearchMember(delTelp);
+//     // if(){
+
+//     // }
+// }
+
+int mUserLogin(string inpEmail, string inpPassword){
+    for(int i = 0; i < nMember; i++){
+        if(email[i] == inpEmail && password[i] == inpPassword){
+        return i;
+        }
+    }
+    return -1;
 }
+ 

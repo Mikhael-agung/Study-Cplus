@@ -6,24 +6,40 @@
 #include <algorithm>
 
 using namespace std;
-string kalimat, kalimatLama;
+string kalimat, kalimatLama, kalimatAwal;
 
+void confirm(int &pilih)
+{
+    char konfirmasi;
+    cout << "Kembali Ke menu Utama? (Y/N): ";
+    cin >> konfirmasi;
+    if (konfirmasi == 'y' || konfirmasi == 'Y')
+    {
+        pilih = 0;
+    }
 
+    if (konfirmasi == 'n' || konfirmasi == 'N'){
+        pilih = 9;
+    }
+}
 
-// fungsi Membuat kalimat baru 
-void createSentence(){
+// fungsi Membuat kalimat baru
+void createSentence()
+{
     cout << "Masukkan kalimat baru: ";
     getline(cin, kalimat);
 }
 
 // fungsi untuk call by Value
-void updateSentenceByValue(string sentence){
+void updateSentenceByValue(string sentence)
+{
     cout << "masukan Kalimat baru: ";
-    getline(cin , sentence);
+    getline(cin, sentence);
 }
 
 // fungsi untuk menjalankan Call by Refrence
-void updateSentence(string &sentence){
+void updateSentence(string &sentence)
+{
     kalimatLama = sentence;
     cout << "masukan kalimat baru : ";
     getline(cin, sentence);
@@ -31,50 +47,57 @@ void updateSentence(string &sentence){
     cout << "Kalimat setelah di rubah : " << sentence << endl;
 }
 
-void deleteSentence(){
+void deleteSentence()
+{
     kalimat = "";
     cout << "kalimat sudah di hapus";
 }
 
-string sentenceAscending (string sentence){
+string sentenceAscending(string sentence)
+{
     stringstream ss(sentence);
     string word;
     vector<string> words;
-    while (ss >> word){
+    while (ss >> word)
+    {
         words.push_back(word);
     }
 
     sort(words.begin(), words.end()); //* perubahan hanya di sini untuk Descending menjadi rbegin dan rend
     string sorted_sentence;
-    for(const string& word : words){
+    for (const string &word : words)
+    {
         sorted_sentence += word + " ";
     }
     return sorted_sentence;
 }
 
-string sentenceDescending (string sentence){
+string sentenceDescending(string sentence)
+{
     stringstream ss(sentence);
     string word;
     vector<string> words;
-    while(ss >> word){
+    while (ss >> word)
+    {
         words.push_back(word);
     }
 
     sort(words.rbegin(), words.rend());
     string sorted_sentence;
-    for(const string& word : words){
+    for (const string &word : words)
+    {
         sorted_sentence += word + " ";
     }
     return sorted_sentence;
 }
 
-void showVokalSentences(string& sentence, char vowel){
-    for(char& c : sentence){
-        char lowerC = tolower(c);
-        if(lowerC == 'a' || lowerC == 'i' || lowerC == 'u' || lowerC == 'e' || lowerC == 'o'){
-        c = vowel;
+void showVokalSentences(string sentence){
+    cout << "Huruf vokal dalam kalimat: ";
+    for(char c : sentence){
+        c = tolower(c);
+        if(c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o'){
+            cout << c << " ";
         }
     }
+    cout << endl;
 }
-
-
