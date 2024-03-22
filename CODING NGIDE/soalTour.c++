@@ -12,30 +12,35 @@ int main()
     int totalKonversi = 0;
 
     // Inisialisasi nilai huruf
-    for (int i = 0; i < 26; i++){
+    for (int i = 0; i < 26; i++)
+    {
         nilaiHuruf[i] = i + 1;
     }
 
     // Konversi huruf ke angka
-    for (char huruf : kalimat){
+    for (char huruf : kalimat)
+    {
         totalKonversi += nilaiHuruf[tolower(huruf) - 'a'];
     }
 
     // Hitung rata-rata konversi per kata
-    int jumlahKata = count(kalimat.begin(), kalimat.end(), ' ') + 1;
+    int jumlahKata = count(kalimat.begin(), kalimat.end(), ' ') + 2;
     double rataRataKonversi = (double)totalKonversi / jumlahKata;
 
     for (char huruf : kalimat)
-    {
+    {   
+        if(huruf != ' '){
         cout << huruf << ": " << nilaiHuruf[tolower(huruf) - 'a'] << " ";
+        }
     }
 
     cout << endl;
     cout << "Hasil angka berdasarkan urutan huruf: ";
     for (char huruf : kalimat)
-    {   
-        if(huruf != ' '){
-        cout << nilaiHuruf[tolower(huruf) - 'a'] << " ";
+    {
+        if (huruf != ' ')
+        {
+            cout << nilaiHuruf[tolower(huruf) - 'a'] << " ";
         }
     }
 
